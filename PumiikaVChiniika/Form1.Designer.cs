@@ -85,6 +85,7 @@
             // 
             // tabControl1
             // 
+            tabControl1.Appearance = TabAppearance.Buttons;
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
@@ -96,7 +97,7 @@
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1222, 772);
-            tabControl1.SizeMode = TabSizeMode.Fixed;
+            tabControl1.SizeMode = TabSizeMode.FillToRight;
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -112,10 +113,10 @@
             tabPage1.Cursor = Cursors.IBeam;
             tabPage1.Font = new Font("Segoe UI", 15F);
             tabPage1.ForeColor = Color.MidnightBlue;
-            tabPage1.Location = new Point(4, 44);
+            tabPage1.Location = new Point(4, 47);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1214, 724);
+            tabPage1.Size = new Size(1214, 721);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Преглед на рецепти";
             tabPage1.Click += tabPage1_Click;
@@ -123,7 +124,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources._6039758_resized__1_;
-            pictureBox1.Location = new Point(923, 29);
+            pictureBox1.Location = new Point(1015, 28);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(111, 105);
             pictureBox1.TabIndex = 5;
@@ -204,10 +205,10 @@
             tabPage2.Controls.Add(comboBox2);
             tabPage2.Controls.Add(comboBox1);
             tabPage2.Controls.Add(label4);
-            tabPage2.Location = new Point(4, 44);
+            tabPage2.Location = new Point(4, 47);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1214, 724);
+            tabPage2.Size = new Size(1214, 721);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Добавяне на рецепта";
             // 
@@ -380,10 +381,10 @@
             tabPage3.Controls.Add(comboBox3);
             tabPage3.Controls.Add(comboBox4);
             tabPage3.Controls.Add(label17);
-            tabPage3.Location = new Point(4, 44);
+            tabPage3.Location = new Point(4, 47);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(1214, 724);
+            tabPage3.Size = new Size(1214, 721);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Промяна на рецепта";
             tabPage3.UseVisualStyleBackColor = true;
@@ -566,10 +567,10 @@
             tabPage4.Controls.Add(button2);
             tabPage4.Controls.Add(listBox3);
             tabPage4.Controls.Add(label11);
-            tabPage4.Location = new Point(4, 44);
+            tabPage4.Location = new Point(4, 47);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(1214, 724);
+            tabPage4.Size = new Size(1214, 721);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Изтриване на рецепта";
             // 
@@ -594,7 +595,7 @@
             button2.Name = "button2";
             button2.Size = new Size(150, 52);
             button2.TabIndex = 2;
-            button2.Text = "button2";
+            button2.Text = "Изтрий";
             button2.UseVisualStyleBackColor = false;
             // 
             // listBox3
