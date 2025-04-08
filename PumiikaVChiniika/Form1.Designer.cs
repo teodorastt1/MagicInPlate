@@ -591,7 +591,7 @@
             button2.BackColor = Color.MistyRose;
             button2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             button2.ForeColor = Color.LightCoral;
-            button2.Location = new Point(876, 636);
+            button2.Location = new Point(876, 635);
             button2.Name = "button2";
             button2.Size = new Size(150, 52);
             button2.TabIndex = 2;
