@@ -41,6 +41,14 @@ namespace PumiikaVChiniika
                           .Select(ri => ri.Ingredient.Name)
                           .ToList();
         }
+        
+        public List<string> GetIngredientQuantityForRecipe(int recipeId)
+        {
+            return context.RecipeIngredients
+                          .Where(ri => ri.RecipeId == recipeId)
+                          .Select(ri => ri.Quantity)
+                          .ToList();
+        }
 
     }
 }

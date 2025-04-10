@@ -37,21 +37,31 @@ namespace PumiikaVChiniika
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             FormView formView = new FormView();
+
             List<string> recipeInstructions = formView.GetRecipeInstructions();
             List<int> recipeId = formView.GetRecipeId();
+
             richTextBox5.Clear();
             listBox2.Items.Clear();
-            
+
             int selectedIndex = listBox1.SelectedIndex;
-            var selectedRecipeInstructions = recipeInstructions[selectedIndex];
-            int selectedRecipeIngredients = recipeId[selectedIndex];
+
+            string selectedRecipeInstructions = recipeInstructions[selectedIndex];
+            int selectedRecipeId = recipeId[selectedIndex];
+
             richTextBox5.Text = selectedRecipeInstructions;
 
+            List<string> ingredients = formView.GetIngredientsForRecipe(selectedRecipeId);
+            List<string> quantities = formView.GetIngredientQuantityForRecipe(selectedRecipeId);
 
-            List<string> ingredients = formView.GetIngredientsForRecipe(selectedRecipeIngredients);
+            int i = 0;
             foreach (var ingredient in ingredients)
             {
-                listBox2.Items.Add(ingredient);
+                if (i < quantities.Count)
+                {
+                    listBox2.Items.Add(ingredient+ " - " +quantities[i]);
+                }
+                i++;
             }
 
 
