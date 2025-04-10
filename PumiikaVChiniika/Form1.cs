@@ -14,7 +14,7 @@ namespace PumiikaVChiniika
 
         }
 
-        
+
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -92,6 +92,48 @@ namespace PumiikaVChiniika
             richTextBox5.Clear();
             listBox2.Items.Clear();
             richTextBox6.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormView formView = new FormView();
+
+            int selectedIndex = listBox3.SelectedIndex;
+
+            if (selectedIndex >= 0)
+            {
+                List<int> recipeIds = formView.GetRecipeId();
+                int selectedRecipeId = recipeIds[selectedIndex];
+
+                
+                var confirmResult = MessageBox.Show("Are you sure you want to delete this recipe?", "Confirm Delete", MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    formView.DeleteRecipeById(selectedRecipeId);
+                    UIRefresh(formView);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a recipe to delete.");
+            }
+        }
+
+        private void UIRefresh(FormView formView)
+        {
+            listBox1.Items.Clear();
+            listBox3.Items.Clear();
+            listBox4.Items.Clear();
+            List<string> updatedNames = formView.GetRecipeNames();
+            foreach (var name in updatedNames)
+            {
+                listBox1.Items.Add(name);
+                listBox3.Items.Add(name);
+                listBox4.Items.Add(name);
+            }
+
+            richTextBox5.Clear();
+            listBox2.Items.Clear();
         }
     }
 }

@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            richTextBox6 = new RichTextBox();
+            label22 = new Label();
             richTextBox5 = new RichTextBox();
             label21 = new Label();
             pictureBox1 = new PictureBox();
@@ -78,8 +80,6 @@
             button2 = new Button();
             listBox3 = new ListBox();
             label11 = new Label();
-            label22 = new Label();
-            richTextBox6 = new RichTextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -131,6 +131,23 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Преглед на рецепти";
             tabPage1.Click += tabPage1_Click;
+            // 
+            // richTextBox6
+            // 
+            richTextBox6.Location = new Point(788, 185);
+            richTextBox6.Name = "richTextBox6";
+            richTextBox6.Size = new Size(234, 320);
+            richTextBox6.TabIndex = 9;
+            richTextBox6.Text = "";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(785, 152);
+            label22.Name = "label22";
+            label22.Size = new Size(212, 28);
+            label22.TabIndex = 8;
+            label22.Text = "Допълнително Инфо:";
             // 
             // richTextBox5
             // 
@@ -650,6 +667,7 @@
             button2.TabIndex = 2;
             button2.Text = "Изтрий";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // listBox3
             // 
@@ -673,23 +691,6 @@
             label11.Size = new Size(194, 28);
             label11.TabIndex = 0;
             label11.Text = "Изберете рецепта:";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(785, 152);
-            label22.Name = "label22";
-            label22.Size = new Size(212, 28);
-            label22.TabIndex = 8;
-            label22.Text = "Допълнително Инфо:";
-            // 
-            // richTextBox6
-            // 
-            richTextBox6.Location = new Point(788, 185);
-            richTextBox6.Name = "richTextBox6";
-            richTextBox6.Size = new Size(234, 320);
-            richTextBox6.TabIndex = 9;
-            richTextBox6.Text = "";
             // 
             // Form1
             // 

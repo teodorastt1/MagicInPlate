@@ -74,6 +74,23 @@ namespace PumiikaVChiniika
                 .ToList();
         }
 
+        public void DeleteRecipeById(int recipeId)
+        {
+            var recipeToDelete = context.Recipes
+                                        .FirstOrDefault(r => r.RecipeId == recipeId);
 
+            if (recipeToDelete != null)
+            {
+                
+                var relatedIngredients = context.RecipeIngredients
+                                                .Where(ri => ri.RecipeId == recipeId)
+                                                .ToList();
+
+                context.RecipeIngredients.RemoveRange(relatedIngredients);
+                context.Recipes.Remove(recipeToDelete);
+
+                context.SaveChanges();
+            }
+        }
     }
 }
