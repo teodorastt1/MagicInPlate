@@ -26,6 +26,12 @@ namespace PumiikaVChiniika
                 .Select(r => r.Name)
                 .ToList();
         }
+        public List<string> GetRecipeInstructions()
+        {
+            return context.Recipes
+                .Select(r => r.Instructions)
+                .ToList();
+        }
 
     }
 }

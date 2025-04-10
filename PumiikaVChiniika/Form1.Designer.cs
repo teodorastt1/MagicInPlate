@@ -30,6 +30,8 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            richTextBox5 = new RichTextBox();
+            label21 = new Label();
             pictureBox1 = new PictureBox();
             label3 = new Label();
             listBox2 = new ListBox();
@@ -75,8 +77,6 @@
             button2 = new Button();
             listBox3 = new ListBox();
             label11 = new Label();
-            label21 = new Label();
-            richTextBox5 = new RichTextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -127,6 +127,23 @@
             tabPage1.Text = "Преглед на рецепти";
             tabPage1.Click += tabPage1_Click;
             // 
+            // richTextBox5
+            // 
+            richTextBox5.Location = new Point(772, 201);
+            richTextBox5.Name = "richTextBox5";
+            richTextBox5.Size = new Size(254, 309);
+            richTextBox5.TabIndex = 7;
+            richTextBox5.Text = "";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(796, 168);
+            label21.Name = "label21";
+            label21.Size = new Size(128, 28);
+            label21.TabIndex = 6;
+            label21.Text = "Инструкции:";
+            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources._6039758_resized__1_;
@@ -172,6 +189,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(183, 340);
             listBox1.TabIndex = 2;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -650,23 +668,6 @@
             label11.Size = new Size(194, 28);
             label11.TabIndex = 0;
             label11.Text = "Изберете рецепта:";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(796, 168);
-            label21.Name = "label21";
-            label21.Size = new Size(128, 28);
-            label21.TabIndex = 6;
-            label21.Text = "Инструкции:";
-            // 
-            // richTextBox5
-            // 
-            richTextBox5.Location = new Point(772, 201);
-            richTextBox5.Name = "richTextBox5";
-            richTextBox5.Size = new Size(254, 309);
-            richTextBox5.TabIndex = 7;
-            richTextBox5.Text = "";
             // 
             // Form1
             // 
