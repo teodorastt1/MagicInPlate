@@ -49,6 +49,31 @@ namespace PumiikaVChiniika
                           .Select(ri => ri.Quantity)
                           .ToList();
         }
+        public List<string> GetRecipeDescription()
+        {
+            return context.Recipes
+                .Select(r => r.Description)
+                .ToList();
+        }
+        public List<int> GetRecipePrepTime()
+        {
+            return context.Recipes
+                .Select(r => r.PreparationTime)
+                .ToList();
+        }
+        public List<string> GetRecipeDifficulty()
+        {
+            return context.Recipes
+                .Select(r => r.Difficulty)
+                .ToList();
+        }
+        public List<string> GetRecipeCategory()
+        {
+            return context.Recipes
+                .Select(r => r.Category.Name)
+                .ToList();
+        }
+
 
     }
 }
