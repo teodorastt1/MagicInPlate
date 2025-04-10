@@ -67,7 +67,7 @@ namespace PumiikaVChiniika
                 .Select(r => r.Difficulty)
                 .ToList();
         }
-        public List<string> GetRecipeCategory()
+        public List<string> GetRecipeCategoryName()
         {
             return context.Recipes
                 .Select(r => r.Category.Name)
