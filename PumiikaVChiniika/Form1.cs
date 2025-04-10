@@ -9,7 +9,7 @@ namespace PumiikaVChiniika
             InitializeComponent();
             FormView formView = new FormView();
             List<string> recipeNames = formView.GetRecipeNames();
-            List<string> recipeInstructions = formView.GetRecipeInstructions();
+            
             foreach (string name in recipeNames)
             {
                 listBox1.Items.Add(name);
@@ -38,11 +38,23 @@ namespace PumiikaVChiniika
         {
             FormView formView = new FormView();
             List<string> recipeInstructions = formView.GetRecipeInstructions();
+            List<int> recipeId = formView.GetRecipeId();
             richTextBox5.Clear();
+            listBox2.Items.Clear();
+            
             int selectedIndex = listBox1.SelectedIndex;
-            var selectedRecipe = recipeInstructions[selectedIndex];
-            richTextBox5.Clear();
-            richTextBox5.Text = selectedRecipe;
+            var selectedRecipeInstructions = recipeInstructions[selectedIndex];
+            int selectedRecipeIngredients = recipeId[selectedIndex];
+            richTextBox5.Text = selectedRecipeInstructions;
+
+
+            List<string> ingredients = formView.GetIngredientsForRecipe(selectedRecipeIngredients);
+            foreach (var ingredient in ingredients)
+            {
+                listBox2.Items.Add(ingredient);
+            }
+
+
 
         }
     }

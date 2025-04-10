@@ -9,17 +9,19 @@ namespace PumiikaVChiniika
 {
     public class FormView
     {
-        /*public List<string> GetRecipeNames(List<Recipe> recipes)
-        {
-            return recipes.Select(r => r.Name).ToList();
-        }*/
+        
         private readonly MagicInPlateContext context;
 
         public FormView()
         {
             context = new MagicInPlateContext();
         }
-
+        public List<int> GetRecipeId()
+        {
+            return context.Recipes
+                .Select(r => r.RecipeId)
+                .ToList();
+        }
         public List<string> GetRecipeNames()
         {
             return context.Recipes
@@ -31,6 +33,13 @@ namespace PumiikaVChiniika
             return context.Recipes
                 .Select(r => r.Instructions)
                 .ToList();
+        }
+        public List<string> GetIngredientsForRecipe(int recipeId)
+        {
+            return context.RecipeIngredients
+                          .Where(ri => ri.RecipeId == recipeId)
+                          .Select(ri => ri.Ingredient.Name)
+                          .ToList();
         }
 
     }
