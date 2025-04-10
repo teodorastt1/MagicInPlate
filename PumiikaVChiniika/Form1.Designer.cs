@@ -78,6 +78,8 @@
             button2 = new Button();
             listBox3 = new ListBox();
             label11 = new Label();
+            label22 = new Label();
+            richTextBox6 = new RichTextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -108,6 +110,8 @@
             // 
             tabPage1.BackColor = Color.SkyBlue;
             tabPage1.BackgroundImage = Properties.Resources.ingredients_noodles_with_vegetables_notebook_23_2148551727_resized;
+            tabPage1.Controls.Add(richTextBox6);
+            tabPage1.Controls.Add(label22);
             tabPage1.Controls.Add(richTextBox5);
             tabPage1.Controls.Add(label21);
             tabPage1.Controls.Add(pictureBox1);
@@ -130,7 +134,7 @@
             // 
             // richTextBox5
             // 
-            richTextBox5.Location = new Point(772, 201);
+            richTextBox5.Location = new Point(507, 185);
             richTextBox5.Name = "richTextBox5";
             richTextBox5.Size = new Size(254, 309);
             richTextBox5.TabIndex = 7;
@@ -139,7 +143,7 @@
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(796, 168);
+            label21.Location = new Point(531, 152);
             label21.Name = "label21";
             label21.Size = new Size(128, 28);
             label21.TabIndex = 6;
@@ -175,7 +179,7 @@
             // 
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 28;
-            listBox2.Location = new Point(510, 199);
+            listBox2.Location = new Point(245, 183);
             listBox2.Margin = new Padding(3, 2, 3, 2);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(217, 340);
@@ -185,7 +189,7 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 28;
-            listBox1.Location = new Point(293, 199);
+            listBox1.Location = new Point(28, 183);
             listBox1.Margin = new Padding(3, 2, 3, 2);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(183, 340);
@@ -197,7 +201,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label2.ForeColor = Color.LightSeaGreen;
-            label2.Location = new Point(510, 159);
+            label2.Location = new Point(245, 143);
             label2.Name = "label2";
             label2.Size = new Size(108, 28);
             label2.TabIndex = 1;
@@ -208,7 +212,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label1.ForeColor = Color.LightSeaGreen;
-            label1.Location = new Point(293, 159);
+            label1.Location = new Point(28, 143);
             label1.Name = "label1";
             label1.Size = new Size(97, 28);
             label1.TabIndex = 0;
@@ -670,6 +674,23 @@
             label11.TabIndex = 0;
             label11.Text = "Изберете рецепта:";
             // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(785, 152);
+            label22.Name = "label22";
+            label22.Size = new Size(212, 28);
+            label22.TabIndex = 8;
+            label22.Text = "Допълнително Инфо:";
+            // 
+            // richTextBox6
+            // 
+            richTextBox6.Location = new Point(788, 185);
+            richTextBox6.Name = "richTextBox6";
+            richTextBox6.Size = new Size(234, 320);
+            richTextBox6.TabIndex = 9;
+            richTextBox6.Text = "";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -745,5 +766,7 @@
         private Button button3;
         private RichTextBox richTextBox5;
         private Label label21;
+        private RichTextBox richTextBox6;
+        private Label label22;
     }
 }
