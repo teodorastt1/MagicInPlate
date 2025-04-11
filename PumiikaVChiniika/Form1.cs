@@ -10,7 +10,11 @@ namespace PumiikaVChiniika
             FormView formView = new FormView();
             List<string> recipeNames = formView.GetRecipeNames();
 
+            comboBox1.Items.Add("?????");
+            comboBox1.Items.Add("??????");
+            comboBox1.Items.Add("??????");
             RecievingRecipeNamesInAllListBoxes(recipeNames);
+
 
         }
 
