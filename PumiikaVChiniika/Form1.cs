@@ -105,7 +105,7 @@ namespace PumiikaVChiniika
             selectedRecipeInstructions = recipeInstructions[selectedIndex];
             extraInfo = recipeDescription[selectedIndex] +
                 "\n" + recipePrepTime[selectedIndex] +
-                " minutes\n" + recipeDifficulty[selectedIndex] +
+                " Минути\n" + recipeDifficulty[selectedIndex] +
                 "\n" + recipeCategory[selectedIndex];
         }
         private void GettingInfoAboutRecipesForPageThree(FormView formView,  List<string> ingredients, List<string> quantities, out string selectedRecipeInstructions,string description,string cookingTimr,string difficulty,string category, string name)
@@ -124,7 +124,7 @@ namespace PumiikaVChiniika
             quantities = formView.GetIngredientQuantityForRecipe(selectedRecipeId);
             selectedRecipeInstructions = recipeInstructions[selectedIndex];
             description = recipeDescription[selectedIndex];
-            cookingTimr=recipePrepTime[selectedIndex]+" minutes";
+            cookingTimr=recipePrepTime[selectedIndex]+" Минути";
             difficulty = recipeDifficulty[selectedIndex];
             category = recipeCategory[selectedIndex];
             name = recipeName[selectedIndex];
@@ -148,7 +148,7 @@ namespace PumiikaVChiniika
             listBox2.Items.Clear();
             richTextBox6.Clear();
         }
-        private void ClearAfterAChangeInThirdTab()
+       /* private void ClearAfterAChangeInThirdTab()
         {
             richTextBox4.Clear();
             textBox5.Clear();
@@ -157,7 +157,7 @@ namespace PumiikaVChiniika
             richTextBox3.Clear();
             comboBox4.Items.Clear();
             comboBox3.Items.Clear();
-        }
+        }*/
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -203,14 +203,14 @@ namespace PumiikaVChiniika
 
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FormView formView = new FormView();
+           /* FormView formView = new FormView();
             List<string> ingredients, quantities;
             string selectedRecipeInstructions, extraInfo;
             GettingInfoAboutRecipesForPageThree(formView)///////////
 
             ClearAfterAChangeInThirdTab();
             WritingInstructionsAndExtraInfoInFirstTab(selectedRecipeInstructions, extraInfo);
-            DisplayingIngredientsAndQuantitiesTogether(ingredients, quantities);
+            DisplayingIngredientsAndQuantitiesTogether(ingredients, quantities);*/
         }
     }
 }
