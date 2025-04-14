@@ -28,6 +28,13 @@ namespace PumiikaVChiniika
                 .Select(r => r.Name)
                 .ToList();
         }
+        public List<string> GetRecipeNameByIndex(int recipeId)
+        {
+            return context.Recipes
+                .Where(ri => ri.RecipeId == recipeId)
+                .Select(r => r.Name)
+                .ToList();
+        }
         public List<string> GetRecipeInstructions()
         {
             return context.Recipes
