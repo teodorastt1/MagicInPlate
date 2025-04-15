@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            TabPage tabPageAddIngredient;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            label24 = new Label();
+            listBox5 = new ListBox();
+            textBox7 = new TextBox();
+            button4 = new Button();
+            label23 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             richTextBox6 = new RichTextBox();
@@ -42,6 +48,8 @@
             label2 = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
+            label25 = new Label();
+            listBox6 = new ListBox();
             label10 = new Label();
             label8 = new Label();
             button1 = new Button();
@@ -53,7 +61,6 @@
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             richTextBox2 = new RichTextBox();
-            richTextBox1 = new RichTextBox();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             label4 = new Label();
@@ -80,6 +87,11 @@
             button2 = new Button();
             listBox3 = new ListBox();
             label11 = new Label();
+            label26 = new Label();
+            listBox7 = new ListBox();
+            richTextBox1 = new RichTextBox();
+            tabPageAddIngredient = new TabPage();
+            tabPageAddIngredient.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -88,11 +100,70 @@
             tabPage4.SuspendLayout();
             SuspendLayout();
             // 
+            // tabPageAddIngredient
+            // 
+            tabPageAddIngredient.Controls.Add(label24);
+            tabPageAddIngredient.Controls.Add(listBox5);
+            tabPageAddIngredient.Controls.Add(textBox7);
+            tabPageAddIngredient.Controls.Add(button4);
+            tabPageAddIngredient.Controls.Add(label23);
+            tabPageAddIngredient.Location = new Point(4, 93);
+            tabPageAddIngredient.Name = "tabPageAddIngredient";
+            tabPageAddIngredient.Padding = new Padding(3);
+            tabPageAddIngredient.Size = new Size(1214, 675);
+            tabPageAddIngredient.TabIndex = 4;
+            tabPageAddIngredient.Text = "dobavqne na produkt";
+            tabPageAddIngredient.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(100, 45);
+            label24.Name = "label24";
+            label24.Size = new Size(201, 35);
+            label24.TabIndex = 4;
+            label24.Text = "nalichni produkti";
+            // 
+            // listBox5
+            // 
+            listBox5.FormattingEnabled = true;
+            listBox5.ItemHeight = 35;
+            listBox5.Location = new Point(100, 108);
+            listBox5.Name = "listBox5";
+            listBox5.Size = new Size(317, 459);
+            listBox5.TabIndex = 3;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(725, 109);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(224, 41);
+            textBox7.TabIndex = 2;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(725, 189);
+            button4.Name = "button4";
+            button4.Size = new Size(224, 54);
+            button4.TabIndex = 1;
+            button4.Text = "dobavqne";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(682, 58);
+            label23.Name = "label23";
+            label23.Size = new Size(151, 35);
+            label23.TabIndex = 0;
+            label23.Text = "nov produkt";
+            // 
             // tabControl1
             // 
             tabControl1.Appearance = TabAppearance.Buttons;
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPageAddIngredient);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
             tabControl1.Font = new Font("Segoe UI", 15F);
@@ -122,10 +193,10 @@
             tabPage1.Cursor = Cursors.IBeam;
             tabPage1.Font = new Font("Segoe UI", 15F);
             tabPage1.ForeColor = Color.MidnightBlue;
-            tabPage1.Location = new Point(4, 47);
+            tabPage1.Location = new Point(4, 93);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 3, 3, 3);
-            tabPage1.Size = new Size(1214, 721);
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(1214, 675);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Преглед на рецепти";
             tabPage1.Click += tabPage1_Click;
@@ -197,6 +268,7 @@
             listBox2.ItemHeight = 35;
             listBox2.Location = new Point(280, 244);
             listBox2.Name = "listBox2";
+            listBox2.SelectionMode = SelectionMode.None;
             listBox2.Size = new Size(247, 424);
             listBox2.TabIndex = 3;
             // 
@@ -236,6 +308,11 @@
             // 
             tabPage2.BackColor = Color.Transparent;
             tabPage2.BackgroundImage = Properties.Resources.pexels_enginakyurt_1435895_compressed_resized;
+            tabPage2.Controls.Add(richTextBox1);
+            tabPage2.Controls.Add(listBox7);
+            tabPage2.Controls.Add(label26);
+            tabPage2.Controls.Add(label25);
+            tabPage2.Controls.Add(listBox6);
             tabPage2.Controls.Add(label10);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(button1);
@@ -247,16 +324,34 @@
             tabPage2.Controls.Add(textBox2);
             tabPage2.Controls.Add(textBox1);
             tabPage2.Controls.Add(richTextBox2);
-            tabPage2.Controls.Add(richTextBox1);
             tabPage2.Controls.Add(comboBox2);
             tabPage2.Controls.Add(comboBox1);
             tabPage2.Controls.Add(label4);
-            tabPage2.Location = new Point(4, 47);
+            tabPage2.Location = new Point(4, 93);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3, 3, 3, 3);
-            tabPage2.Size = new Size(1214, 721);
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(1214, 675);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Добавяне на рецепта";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(980, 38);
+            label25.Name = "label25";
+            label25.Size = new Size(139, 35);
+            label25.TabIndex = 20;
+            label25.Text = "kolichestvo";
+            // 
+            // listBox6
+            // 
+            listBox6.FormattingEnabled = true;
+            listBox6.ItemHeight = 35;
+            listBox6.Location = new Point(466, 85);
+            listBox6.Name = "listBox6";
+            listBox6.SelectionMode = SelectionMode.MultiSimple;
+            listBox6.Size = new Size(171, 284);
+            listBox6.TabIndex = 19;
             // 
             // label10
             // 
@@ -276,11 +371,11 @@
             label8.BackColor = Color.Gold;
             label8.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label8.ForeColor = Color.DarkGreen;
-            label8.Location = new Point(466, 47);
+            label8.Location = new Point(466, 50);
             label8.Name = "label8";
-            label8.Size = new Size(141, 35);
+            label8.Size = new Size(244, 35);
             label8.TabIndex = 17;
-            label8.Text = "Продукти:";
+            label8.Text = "Nalichni Продукти:";
             // 
             // button1
             // 
@@ -371,14 +466,6 @@
             richTextBox2.TabIndex = 8;
             richTextBox2.Text = "";
             // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(466, 99);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(585, 221);
-            richTextBox1.TabIndex = 7;
-            richTextBox1.Text = "";
-            // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
@@ -427,10 +514,10 @@
             tabPage3.Controls.Add(comboBox3);
             tabPage3.Controls.Add(comboBox4);
             tabPage3.Controls.Add(label17);
-            tabPage3.Location = new Point(4, 47);
+            tabPage3.Location = new Point(4, 93);
             tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3, 3, 3, 3);
-            tabPage3.Size = new Size(1214, 721);
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(1214, 675);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Промяна на рецепта";
             tabPage3.UseVisualStyleBackColor = true;
@@ -614,10 +701,10 @@
             tabPage4.Controls.Add(button2);
             tabPage4.Controls.Add(listBox3);
             tabPage4.Controls.Add(label11);
-            tabPage4.Location = new Point(4, 47);
+            tabPage4.Location = new Point(4, 93);
             tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3, 3, 3, 3);
-            tabPage4.Size = new Size(1214, 721);
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(1214, 675);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Изтриване на рецепта";
             // 
@@ -668,16 +755,44 @@
             label11.TabIndex = 0;
             label11.Text = "Изберете рецепта:";
             // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(795, 38);
+            label26.Name = "label26";
+            label26.Size = new Size(94, 35);
+            label26.TabIndex = 21;
+            label26.Text = "label26";
+            // 
+            // listBox7
+            // 
+            listBox7.FormattingEnabled = true;
+            listBox7.ItemHeight = 35;
+            listBox7.Location = new Point(752, 95);
+            listBox7.Name = "listBox7";
+            listBox7.Size = new Size(137, 249);
+            listBox7.TabIndex = 22;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(975, 98);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(124, 284);
+            richTextBox1.TabIndex = 23;
+            richTextBox1.Text = "";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
-            ClientSize = new Size(1221, 771);
+            ClientSize = new Size(1220, 769);
             Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Magic In Plate";
+            tabPageAddIngredient.ResumeLayout(false);
+            tabPageAddIngredient.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -708,7 +823,6 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private RichTextBox richTextBox2;
-        private RichTextBox richTextBox1;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
         private Label label4;
@@ -744,5 +858,16 @@
         private Label label21;
         private RichTextBox richTextBox6;
         private Label label22;
+        private TabPage tabPageAddIngredient;
+        private Label label24;
+        private ListBox listBox5;
+        private TextBox textBox7;
+        private Button button4;
+        private Label label23;
+        private ListBox listBox6;
+        private Label label25;
+        private ListBox listBox7;
+        private Label label26;
+        private RichTextBox richTextBox1;
     }
 }
