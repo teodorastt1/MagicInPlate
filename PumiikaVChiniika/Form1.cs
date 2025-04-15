@@ -12,6 +12,7 @@ namespace PumiikaVChiniika
             LoadDifficultiesIntoCheckBoxesForAddingAndChange();
             LoadCategoriesIntoCheckBOxesForAddingAndChange();
             RecievingRecipeNamesInAllListBoxes(recipeNames);
+            LoadIngredientsIntoListBox5(formView);
 
 
 
@@ -82,7 +83,7 @@ namespace PumiikaVChiniika
             richTextBox5.Text = selectedRecipeInstructions;
             richTextBox6.Text = extraInfo;
         }
-        private void WritingInstructionsAndInfoInThirdTab(string selectedRecipeInstructions, string recipeDescription,string name)
+        private void WritingInstructionsAndInfoInThirdTab(string selectedRecipeInstructions, string recipeDescription, string name)
         {
             richTextBox4.Text = selectedRecipeInstructions;
             textBox4.Text = recipeDescription;
@@ -108,8 +109,8 @@ namespace PumiikaVChiniika
                 " Минути\n" + recipeDifficulty[selectedIndex] +
                 "\n" + recipeCategory[selectedIndex];
         }
-        private void GettingInfoAboutRecipesForPageThree(FormView formView,  List<string> ingredients, List<string> quantities, out string selectedRecipeInstructions,string description,string cookingTimr,string difficulty,string category, string name)
-        { 
+        private void GettingInfoAboutRecipesForPageThree(FormView formView, List<string> ingredients, List<string> quantities, out string selectedRecipeInstructions, string description, string cookingTimr, string difficulty, string category, string name)
+        {
             List<string> recipeInstructions = formView.GetRecipeInstructions();
             List<int> recipeId = formView.GetRecipeId();
             List<string> recipeDescription = formView.GetRecipeDescription();
@@ -124,7 +125,7 @@ namespace PumiikaVChiniika
             quantities = formView.GetIngredientQuantityForRecipe(selectedRecipeId);
             selectedRecipeInstructions = recipeInstructions[selectedIndex];
             description = recipeDescription[selectedIndex];
-            cookingTimr=recipePrepTime[selectedIndex]+" Минути";
+            cookingTimr = recipePrepTime[selectedIndex] + " Минути";
             difficulty = recipeDifficulty[selectedIndex];
             category = recipeCategory[selectedIndex];
             name = recipeName[selectedIndex];
@@ -148,16 +149,16 @@ namespace PumiikaVChiniika
             listBox2.Items.Clear();
             richTextBox6.Clear();
         }
-       /* private void ClearAfterAChangeInThirdTab()
-        {
-            richTextBox4.Clear();
-            textBox5.Clear();
-            textBox4.Clear();
-            textBox6.Clear();
-            richTextBox3.Clear();
-            comboBox4.Items.Clear();
-            comboBox3.Items.Clear();
-        }*/
+        /* private void ClearAfterAChangeInThirdTab()
+         {
+             richTextBox4.Clear();
+             textBox5.Clear();
+             textBox4.Clear();
+             textBox6.Clear();
+             richTextBox3.Clear();
+             comboBox4.Items.Clear();
+             comboBox3.Items.Clear();
+         }*/
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -203,14 +204,50 @@ namespace PumiikaVChiniika
 
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-           /* FormView formView = new FormView();
-            List<string> ingredients, quantities;
-            string selectedRecipeInstructions, extraInfo;
-            GettingInfoAboutRecipesForPageThree(formView)///////////
+            /* FormView formView = new FormView();
+             List<string> ingredients, quantities;
+             string selectedRecipeInstructions, extraInfo;
+             GettingInfoAboutRecipesForPageThree(formView)///////////
 
-            ClearAfterAChangeInThirdTab();
-            WritingInstructionsAndExtraInfoInFirstTab(selectedRecipeInstructions, extraInfo);
-            DisplayingIngredientsAndQuantitiesTogether(ingredients, quantities);*/
+             ClearAfterAChangeInThirdTab();
+             WritingInstructionsAndExtraInfoInFirstTab(selectedRecipeInstructions, extraInfo);
+             DisplayingIngredientsAndQuantitiesTogether(ingredients, quantities);*/
+        }
+        private void LoadIngredientsIntoListBox5(FormView formView)
+        {
+            listBoxProducts.Items.Clear();
+            List<string> ingredients = formView.GetAllIngredients();
+            foreach (var ingredient in ingredients)
+            {
+                listBoxProducts.Items.Add(ingredient);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormView formView = new FormView();
+            string newIngredientName = textBox7.Text.Trim();
+
+            if (!string.IsNullOrEmpty(newIngredientName))
+            {
+                formView.AddIngredient(newIngredientName);
+                LoadIngredientsIntoListBox5(formView);
+                textBox7.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Не сте въвели име на продукта!");
+            }
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -99,6 +99,22 @@ namespace PumiikaVChiniika
                 context.SaveChanges();
             }
         }
-        
+        public List<string> GetAllIngredients()
+        {
+            return context.Ingredients
+                          .Select(i => i.Name)
+                          .ToList();
+        }
+        public void AddIngredient(string name)
+        {
+            if (!string.IsNullOrWhiteSpace(name) &&
+                !context.Ingredients.Any(i => i.Name == name))
+            {
+                Ingredient newIngredient = new Ingredient { Name = name };
+                context.Ingredients.Add(newIngredient);
+                context.SaveChanges();
+            }
+        }
+
     }
 }

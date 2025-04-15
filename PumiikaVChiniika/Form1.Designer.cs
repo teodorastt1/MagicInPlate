@@ -31,10 +31,10 @@
             TabPage tabPageAddIngredient;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label24 = new Label();
-            listBox5 = new ListBox();
+            listBoxProducts = new ListBox();
             textBox7 = new TextBox();
-            button4 = new Button();
-            label23 = new Label();
+            buttonForAdding = new Button();
+            labelForNewitem = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             richTextBox6 = new RichTextBox();
@@ -48,6 +48,9 @@
             label2 = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
+            richTextBox1 = new RichTextBox();
+            listBox7 = new ListBox();
+            label26 = new Label();
             label25 = new Label();
             listBox6 = new ListBox();
             label10 = new Label();
@@ -87,9 +90,6 @@
             button2 = new Button();
             listBox3 = new ListBox();
             label11 = new Label();
-            label26 = new Label();
-            listBox7 = new ListBox();
-            richTextBox1 = new RichTextBox();
             tabPageAddIngredient = new TabPage();
             tabPageAddIngredient.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -103,10 +103,10 @@
             // tabPageAddIngredient
             // 
             tabPageAddIngredient.Controls.Add(label24);
-            tabPageAddIngredient.Controls.Add(listBox5);
+            tabPageAddIngredient.Controls.Add(listBoxProducts);
             tabPageAddIngredient.Controls.Add(textBox7);
-            tabPageAddIngredient.Controls.Add(button4);
-            tabPageAddIngredient.Controls.Add(label23);
+            tabPageAddIngredient.Controls.Add(buttonForAdding);
+            tabPageAddIngredient.Controls.Add(labelForNewitem);
             tabPageAddIngredient.Location = new Point(4, 93);
             tabPageAddIngredient.Name = "tabPageAddIngredient";
             tabPageAddIngredient.Padding = new Padding(3);
@@ -120,18 +120,19 @@
             label24.AutoSize = true;
             label24.Location = new Point(100, 45);
             label24.Name = "label24";
-            label24.Size = new Size(201, 35);
+            label24.Size = new Size(231, 35);
             label24.TabIndex = 4;
-            label24.Text = "nalichni produkti";
+            label24.Text = "Налични продукти";
             // 
-            // listBox5
+            // listBoxProducts
             // 
-            listBox5.FormattingEnabled = true;
-            listBox5.ItemHeight = 35;
-            listBox5.Location = new Point(100, 108);
-            listBox5.Name = "listBox5";
-            listBox5.Size = new Size(317, 459);
-            listBox5.TabIndex = 3;
+            listBoxProducts.FormattingEnabled = true;
+            listBoxProducts.ItemHeight = 35;
+            listBoxProducts.Location = new Point(100, 108);
+            listBoxProducts.Name = "listBoxProducts";
+            listBoxProducts.SelectionMode = SelectionMode.None;
+            listBoxProducts.Size = new Size(317, 459);
+            listBoxProducts.TabIndex = 3;
             // 
             // textBox7
             // 
@@ -140,23 +141,24 @@
             textBox7.Size = new Size(224, 41);
             textBox7.TabIndex = 2;
             // 
-            // button4
+            // buttonForAdding
             // 
-            button4.Location = new Point(725, 189);
-            button4.Name = "button4";
-            button4.Size = new Size(224, 54);
-            button4.TabIndex = 1;
-            button4.Text = "dobavqne";
-            button4.UseVisualStyleBackColor = true;
+            buttonForAdding.Location = new Point(725, 189);
+            buttonForAdding.Name = "buttonForAdding";
+            buttonForAdding.Size = new Size(224, 54);
+            buttonForAdding.TabIndex = 1;
+            buttonForAdding.Text = "Добавяне";
+            buttonForAdding.UseVisualStyleBackColor = true;
+            buttonForAdding.Click += button4_Click;
             // 
-            // label23
+            // labelForNewitem
             // 
-            label23.AutoSize = true;
-            label23.Location = new Point(682, 58);
-            label23.Name = "label23";
-            label23.Size = new Size(151, 35);
-            label23.TabIndex = 0;
-            label23.Text = "nov produkt";
+            labelForNewitem.AutoSize = true;
+            labelForNewitem.Location = new Point(682, 58);
+            labelForNewitem.Name = "labelForNewitem";
+            labelForNewitem.Size = new Size(160, 35);
+            labelForNewitem.TabIndex = 0;
+            labelForNewitem.Text = "Нов продукт";
             // 
             // tabControl1
             // 
@@ -334,14 +336,43 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Добавяне на рецепта";
             // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(975, 98);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(124, 284);
+            richTextBox1.TabIndex = 23;
+            richTextBox1.Text = "";
+            // 
+            // listBox7
+            // 
+            listBox7.FormattingEnabled = true;
+            listBox7.ItemHeight = 35;
+            listBox7.Location = new Point(705, 88);
+            listBox7.Name = "listBox7";
+            listBox7.Size = new Size(137, 249);
+            listBox7.TabIndex = 22;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.BackColor = Color.Gold;
+            label26.Location = new Point(716, 38);
+            label26.Name = "label26";
+            label26.Size = new Size(235, 35);
+            label26.TabIndex = 21;
+            label26.Text = "Избрани продукти:";
+            label26.Click += label26_Click;
+            // 
             // label25
             // 
             label25.AutoSize = true;
+            label25.BackColor = Color.Gold;
             label25.Location = new Point(980, 38);
             label25.Name = "label25";
-            label25.Size = new Size(139, 35);
+            label25.Size = new Size(155, 35);
             label25.TabIndex = 20;
-            label25.Text = "kolichestvo";
+            label25.Text = "Количество:";
             // 
             // listBox6
             // 
@@ -533,6 +564,7 @@
             button3.TabIndex = 32;
             button3.Text = "Промени";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // richTextBox4
             // 
@@ -755,38 +787,12 @@
             label11.TabIndex = 0;
             label11.Text = "Изберете рецепта:";
             // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new Point(795, 38);
-            label26.Name = "label26";
-            label26.Size = new Size(94, 35);
-            label26.TabIndex = 21;
-            label26.Text = "label26";
-            // 
-            // listBox7
-            // 
-            listBox7.FormattingEnabled = true;
-            listBox7.ItemHeight = 35;
-            listBox7.Location = new Point(752, 95);
-            listBox7.Name = "listBox7";
-            listBox7.Size = new Size(137, 249);
-            listBox7.TabIndex = 22;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(975, 98);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(124, 284);
-            richTextBox1.TabIndex = 23;
-            richTextBox1.Text = "";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
-            ClientSize = new Size(1220, 769);
+            ClientSize = new Size(1219, 769);
             Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
@@ -860,10 +866,10 @@
         private Label label22;
         private TabPage tabPageAddIngredient;
         private Label label24;
-        private ListBox listBox5;
+        private ListBox listBoxProducts;
         private TextBox textBox7;
-        private Button button4;
-        private Label label23;
+        private Button buttonForAdding;
+        private Label labelForNewitem;
         private ListBox listBox6;
         private Label label25;
         private ListBox listBox7;
