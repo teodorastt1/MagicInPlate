@@ -269,6 +269,11 @@ namespace PumiikaVChiniika
             string difficulty = comboBox1.SelectedValue.ToString();
             string category = comboBox2.SelectedValue.ToString();
 
+            string instructions = textBox3.Text;
+            if (instructions.Length >= 250)
+            {
+                MessageBox.Show("")
+            }
 
         }
     }
