@@ -31,7 +31,7 @@
             TabPage tabPageAddIngredient;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label24 = new Label();
-            listBoxProducts = new ListBox();
+            listBox5 = new ListBox();
             textBox7 = new TextBox();
             buttonForAdding = new Button();
             labelForNewitem = new Label();
@@ -103,7 +103,7 @@
             // tabPageAddIngredient
             // 
             tabPageAddIngredient.Controls.Add(label24);
-            tabPageAddIngredient.Controls.Add(listBoxProducts);
+            tabPageAddIngredient.Controls.Add(listBox5);
             tabPageAddIngredient.Controls.Add(textBox7);
             tabPageAddIngredient.Controls.Add(buttonForAdding);
             tabPageAddIngredient.Controls.Add(labelForNewitem);
@@ -112,7 +112,7 @@
             tabPageAddIngredient.Padding = new Padding(3);
             tabPageAddIngredient.Size = new Size(1214, 675);
             tabPageAddIngredient.TabIndex = 4;
-            tabPageAddIngredient.Text = "dobavqne na produkt";
+            tabPageAddIngredient.Text = "Добавяне на продукт";
             tabPageAddIngredient.UseVisualStyleBackColor = true;
             // 
             // label24
@@ -124,15 +124,15 @@
             label24.TabIndex = 4;
             label24.Text = "Налични продукти";
             // 
-            // listBoxProducts
+            // listBox5
             // 
-            listBoxProducts.FormattingEnabled = true;
-            listBoxProducts.ItemHeight = 35;
-            listBoxProducts.Location = new Point(100, 108);
-            listBoxProducts.Name = "listBoxProducts";
-            listBoxProducts.SelectionMode = SelectionMode.None;
-            listBoxProducts.Size = new Size(317, 459);
-            listBoxProducts.TabIndex = 3;
+            listBox5.FormattingEnabled = true;
+            listBox5.ItemHeight = 35;
+            listBox5.Location = new Point(100, 108);
+            listBox5.Name = "listBox5";
+            listBox5.SelectionMode = SelectionMode.None;
+            listBox5.Size = new Size(317, 459);
+            listBox5.TabIndex = 3;
             // 
             // textBox7
             // 
@@ -205,7 +205,7 @@
             // 
             // richTextBox6
             // 
-            richTextBox6.Location = new Point(901, 247);
+            richTextBox6.Location = new Point(875, 242);
             richTextBox6.Margin = new Padding(3, 4, 3, 4);
             richTextBox6.Name = "richTextBox6";
             richTextBox6.Size = new Size(267, 425);
@@ -215,7 +215,7 @@
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(897, 203);
+            label22.Location = new Point(882, 196);
             label22.Name = "label22";
             label22.Size = new Size(260, 35);
             label22.TabIndex = 8;
@@ -244,7 +244,7 @@
             pictureBox1.Image = Properties.Resources._6039758_resized__1_;
             pictureBox1.Location = new Point(1015, 28);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(111, 136);
+            pictureBox1.Size = new Size(102, 106);
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -268,7 +268,7 @@
             // 
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 35;
-            listBox2.Location = new Point(280, 244);
+            listBox2.Location = new Point(302, 234);
             listBox2.Name = "listBox2";
             listBox2.SelectionMode = SelectionMode.None;
             listBox2.Size = new Size(247, 424);
@@ -289,7 +289,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label2.ForeColor = Color.LightSeaGreen;
-            label2.Location = new Point(280, 191);
+            label2.Location = new Point(325, 196);
             label2.Name = "label2";
             label2.Size = new Size(134, 35);
             label2.TabIndex = 1;
@@ -350,7 +350,8 @@
             listBox7.ItemHeight = 35;
             listBox7.Location = new Point(705, 88);
             listBox7.Name = "listBox7";
-            listBox7.Size = new Size(137, 249);
+            listBox7.SelectionMode = SelectionMode.None;
+            listBox7.Size = new Size(154, 249);
             listBox7.TabIndex = 22;
             // 
             // label26
@@ -362,7 +363,6 @@
             label26.Size = new Size(235, 35);
             label26.TabIndex = 21;
             label26.Text = "Избрани продукти:";
-            label26.Click += label26_Click;
             // 
             // label25
             // 
@@ -383,6 +383,7 @@
             listBox6.SelectionMode = SelectionMode.MultiSimple;
             listBox6.Size = new Size(171, 284);
             listBox6.TabIndex = 19;
+            listBox6.SelectedIndexChanged += listBox6_SelectedIndexChanged;
             // 
             // label10
             // 
@@ -402,11 +403,11 @@
             label8.BackColor = Color.Gold;
             label8.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label8.ForeColor = Color.DarkGreen;
-            label8.Location = new Point(466, 50);
+            label8.Location = new Point(433, 38);
             label8.Name = "label8";
-            label8.Size = new Size(244, 35);
+            label8.Size = new Size(253, 35);
             label8.TabIndex = 17;
-            label8.Text = "Nalichni Продукти:";
+            label8.Text = "Налични продукти:";
             // 
             // button1
             // 
@@ -419,6 +420,7 @@
             button1.TabIndex = 16;
             button1.Text = "Добави";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label7
             // 
@@ -866,7 +868,7 @@
         private Label label22;
         private TabPage tabPageAddIngredient;
         private Label label24;
-        private ListBox listBoxProducts;
+        private ListBox listBox5;
         private TextBox textBox7;
         private Button buttonForAdding;
         private Label labelForNewitem;

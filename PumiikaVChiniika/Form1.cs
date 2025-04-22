@@ -13,6 +13,7 @@ namespace PumiikaVChiniika
             LoadCategoriesIntoCheckBOxesForAddingAndChange();
             RecievingRecipeNamesInAllListBoxes(recipeNames);
             LoadIngredientsIntoListBox5(formView);
+            LoadIngredientsIntoListBox6(formView);
 
 
 
@@ -204,24 +205,27 @@ namespace PumiikaVChiniika
 
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /* FormView formView = new FormView();
-             List<string> ingredients, quantities;
-             string selectedRecipeInstructions, extraInfo;
-             GettingInfoAboutRecipesForPageThree(formView)///////////
 
-             ClearAfterAChangeInThirdTab();
-             WritingInstructionsAndExtraInfoInFirstTab(selectedRecipeInstructions, extraInfo);
-             DisplayingIngredientsAndQuantitiesTogether(ingredients, quantities);*/
         }
         private void LoadIngredientsIntoListBox5(FormView formView)
         {
-            listBoxProducts.Items.Clear();
+            listBox5.Items.Clear();
             List<string> ingredients = formView.GetAllIngredients();
             foreach (var ingredient in ingredients)
             {
-                listBoxProducts.Items.Add(ingredient);
+                listBox5.Items.Add(ingredient);
             }
         }
+        private void LoadIngredientsIntoListBox6(FormView formView)
+        {
+            listBox6.Items.Clear();
+            List<string> ingredients = formView.GetAllIngredients();
+            foreach (var ingredient in ingredients)
+            {
+                listBox6.Items.Add(ingredient);
+            }
+        }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -245,8 +249,26 @@ namespace PumiikaVChiniika
             }
         }
 
-        private void label26_Click(object sender, EventArgs e)
+
+
+        private void listBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var selectedProducts = listBox6.SelectedItems;
+            listBox7.Items.Clear();
+            foreach (var product in selectedProducts)
+            {
+                listBox7.Items.Add(product);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string name=textBox1.Text;
+            string description=textBox2.Text;
+            int cookingTime = int.Parse(textBox3.Text);
+            string difficulty = comboBox1.SelectedValue.ToString();
+            string category = comboBox2.SelectedValue.ToString();
+
 
         }
     }
