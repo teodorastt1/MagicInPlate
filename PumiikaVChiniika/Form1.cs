@@ -84,13 +84,7 @@ namespace PumiikaVChiniika
             richTextBox5.Text = selectedRecipeInstructions;
             richTextBox6.Text = extraInfo;
         }
-        private void WritingInstructionsAndInfoInThirdTab(string selectedRecipeInstructions, string recipeDescription, string name)
-        {
-            richTextBox4.Text = selectedRecipeInstructions;
-            textBox4.Text = recipeDescription;
-            textBox5.Text = name;
-
-        }
+        
 
         private void GettingInfoAboutRecipesForPageOne(FormView formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string extraInfo)
         {
@@ -263,17 +257,41 @@ namespace PumiikaVChiniika
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name=textBox1.Text;
-            string description=textBox2.Text;
-            int cookingTime = int.Parse(textBox3.Text);
-            string difficulty = comboBox1.SelectedValue.ToString();
-            string category = comboBox2.SelectedValue.ToString();
+            string name = textBox1.Text;
+            string description = textBox2.Text;
+            int prepTime = int.Parse(textBox3.Text);
+            string difficulty = comboBox1.SelectedItem.ToString();
+            string category = comboBox2.SelectedItem.ToString();
+            string instructions = richTextBox2.Text;
 
-            string instructions = textBox3.Text;
-            if (instructions.Length >= 250)
+            List<string> selectedIngredients = listBox7.Items.Cast<string>().ToList();
+            List<string> quantities = richTextBox1.Lines.ToList();
+
+            if (selectedIngredients.Count != quantities.Count)
             {
-                MessageBox.Show("")
+                MessageBox.Show("The number of ingredients and quantities do not match!");
+                return;
             }
+
+            FormView formView = new FormView();
+            formView.AddRecipe(name, description, prepTime, difficulty, instructions, category, selectedIngredients, quantities);
+
+            MessageBox.Show("Recipe added successfully!");
+
+            UIRefresh(formView); 
+            LoadIngredientsIntoListBox6(formView); 
+            listBox7.Items.Clear();
+            richTextBox1.Clear();
+            richTextBox2.Clear();
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            comboBox2.Items.Clear();
+            comboBox1.Items.Clear();
+            LoadCategoriesIntoCheckBOxesForAddingAndChange();
+            LoadDifficultiesIntoCheckBoxesForAddingAndChange();
+
+
 
         }
     }

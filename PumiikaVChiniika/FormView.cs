@@ -115,6 +115,43 @@ namespace PumiikaVChiniika
                 context.SaveChanges();
             }
         }
+        public void AddRecipe(string name,string description,int prepTime,string difficulty,string instructions,string categoryName,List<string> ingredientNames,List<string> quantities)
+        {
+            var category = context.Categories.FirstOrDefault(c => c.Name == categoryName);
+            if (category == null)
+            {
+                throw new Exception("Category not found.");
+            }
+
+            var newRecipe = new Recipe
+            {
+                Name = name,
+                Description = description,
+                PreparationTime = prepTime,
+                Difficulty = difficulty,
+                Instructions = instructions,
+                CategoryId = category.CategoryId
+            };
+
+            foreach (var (ingredientName, quantity) in ingredientNames.Zip(quantities, Tuple.Create))
+            {
+                var ingredient = context.Ingredients.FirstOrDefault(i => i.Name == ingredientName);
+                if (ingredient == null)
+                {
+                    throw new Exception($"Ingredient '{ingredientName}' not found.");
+                }
+
+                newRecipe.RecipeIngredients.Add(new RecipeIngredient
+                {
+                    Ingredient = ingredient,
+                    Quantity = quantity
+                });
+            }
+
+            context.Recipes.Add(newRecipe);
+            context.SaveChanges();
+        }
+
 
     }
 }
