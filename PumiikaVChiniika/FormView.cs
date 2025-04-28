@@ -9,7 +9,7 @@ namespace PumiikaVChiniika
 {
     public class FormView
     {
-        
+
         private readonly MagicInPlateContext context;
 
         public FormView()
@@ -48,7 +48,7 @@ namespace PumiikaVChiniika
                           .Select(ri => ri.Ingredient.Name)
                           .ToList();
         }
-        
+
         public List<string> GetIngredientQuantityForRecipe(int recipeId)
         {
             return context.RecipeIngredients
@@ -88,7 +88,7 @@ namespace PumiikaVChiniika
 
             if (recipeToDelete != null)
             {
-                
+
                 var relatedIngredients = context.RecipeIngredients
                                                 .Where(ri => ri.RecipeId == recipeId)
                                                 .ToList();
@@ -99,6 +99,7 @@ namespace PumiikaVChiniika
                 context.SaveChanges();
             }
         }
+
         public List<string> GetAllIngredients()
         {
             return context.Ingredients
@@ -115,7 +116,7 @@ namespace PumiikaVChiniika
                 context.SaveChanges();
             }
         }
-        public void AddRecipe(string name,string description,int prepTime,string difficulty,string instructions,string categoryName,List<string> ingredientNames,List<string> quantities)
+        public void AddRecipe(string name, string description, int prepTime, string difficulty, string instructions, string categoryName, List<string> ingredientNames, List<string> quantities)
         {
             var category = context.Categories.FirstOrDefault(c => c.Name == categoryName);
             if (category == null)
@@ -133,9 +134,12 @@ namespace PumiikaVChiniika
                 CategoryId = category.CategoryId
             };
 
-            foreach (var (ingredientName, quantity) in ingredientNames.Zip(quantities, Tuple.Create))
+            for (int i = 0; i < ingredientNames.Count; i++)
             {
-                var ingredient = context.Ingredients.FirstOrDefault(i => i.Name == ingredientName);
+                string ingredientName = ingredientNames[i];
+                string quantity = quantities[i];
+
+                var ingredient = context.Ingredients.FirstOrDefault(ing => ing.Name == ingredientName);
                 if (ingredient == null)
                 {
                     throw new Exception($"Ingredient '{ingredientName}' not found.");
@@ -150,8 +154,9 @@ namespace PumiikaVChiniika
 
             context.Recipes.Add(newRecipe);
             context.SaveChanges();
+
+
+
         }
-
-
     }
 }

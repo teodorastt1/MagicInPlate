@@ -68,9 +68,13 @@
             comboBox1 = new ComboBox();
             label4 = new Label();
             tabPage3 = new TabPage();
+            label27 = new Label();
+            label23 = new Label();
+            richTextBox3 = new RichTextBox();
+            listBox9 = new ListBox();
+            listBox8 = new ListBox();
             button3 = new Button();
             richTextBox4 = new RichTextBox();
-            richTextBox3 = new RichTextBox();
             label20 = new Label();
             label19 = new Label();
             textBox6 = new TextBox();
@@ -530,9 +534,13 @@
             // tabPage3
             // 
             tabPage3.BackgroundImage = Properties.Resources._9760871_resized;
+            tabPage3.Controls.Add(label27);
+            tabPage3.Controls.Add(label23);
+            tabPage3.Controls.Add(richTextBox3);
+            tabPage3.Controls.Add(listBox9);
+            tabPage3.Controls.Add(listBox8);
             tabPage3.Controls.Add(button3);
             tabPage3.Controls.Add(richTextBox4);
-            tabPage3.Controls.Add(richTextBox3);
             tabPage3.Controls.Add(label20);
             tabPage3.Controls.Add(label19);
             tabPage3.Controls.Add(textBox6);
@@ -555,6 +563,52 @@
             tabPage3.Text = "Промяна на рецепта";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(491, 381);
+            label27.Name = "label27";
+            label27.Size = new Size(155, 35);
+            label27.TabIndex = 37;
+            label27.Text = "Количество:";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(51, 341);
+            label23.Name = "label23";
+            label23.Size = new Size(216, 35);
+            label23.TabIndex = 36;
+            label23.Text = "Всички продукти:";
+            // 
+            // richTextBox3
+            // 
+            richTextBox3.Location = new Point(491, 419);
+            richTextBox3.Name = "richTextBox3";
+            richTextBox3.Size = new Size(174, 228);
+            richTextBox3.TabIndex = 35;
+            richTextBox3.Text = "";
+            // 
+            // listBox9
+            // 
+            listBox9.FormattingEnabled = true;
+            listBox9.ItemHeight = 35;
+            listBox9.Location = new Point(271, 398);
+            listBox9.Name = "listBox9";
+            listBox9.Size = new Size(148, 214);
+            listBox9.TabIndex = 34;
+            listBox9.SelectedIndexChanged += listBox9_SelectedIndexChanged;
+            // 
+            // listBox8
+            // 
+            listBox8.FormattingEnabled = true;
+            listBox8.ItemHeight = 35;
+            listBox8.Location = new Point(72, 398);
+            listBox8.Name = "listBox8";
+            listBox8.Size = new Size(135, 249);
+            listBox8.TabIndex = 33;
+            listBox8.SelectedIndexChanged += listBox8_SelectedIndexChanged;
+            // 
             // button3
             // 
             button3.BackColor = Color.SteelBlue;
@@ -576,25 +630,17 @@
             richTextBox4.TabIndex = 31;
             richTextBox4.Text = "";
             // 
-            // richTextBox3
-            // 
-            richTextBox3.Location = new Point(162, 431);
-            richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(303, 265);
-            richTextBox3.TabIndex = 30;
-            richTextBox3.Text = "";
-            // 
             // label20
             // 
             label20.AutoSize = true;
             label20.BackColor = Color.SteelBlue;
             label20.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label20.ForeColor = Color.Orange;
-            label20.Location = new Point(169, 367);
+            label20.Location = new Point(238, 319);
             label20.Name = "label20";
-            label20.Size = new Size(290, 35);
+            label20.Size = new Size(264, 35);
             label20.TabIndex = 29;
-            label20.Text = "Промяна на продукти:";
+            label20.Text = "Въведени продукти:";
             // 
             // label19
             // 
@@ -858,7 +904,6 @@
         private ComboBox comboBox4;
         private Label label17;
         private RichTextBox richTextBox4;
-        private RichTextBox richTextBox3;
         private Label label20;
         private Label label19;
         private Button button3;
@@ -877,5 +922,10 @@
         private ListBox listBox7;
         private Label label26;
         private RichTextBox richTextBox1;
+        private Label label27;
+        private Label label23;
+        private RichTextBox richTextBox3;
+        private ListBox listBox9;
+        private ListBox listBox8;
     }
 }

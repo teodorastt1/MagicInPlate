@@ -84,7 +84,7 @@ namespace PumiikaVChiniika
             richTextBox5.Text = selectedRecipeInstructions;
             richTextBox6.Text = extraInfo;
         }
-        
+
 
         private void GettingInfoAboutRecipesForPageOne(FormView formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string extraInfo)
         {
@@ -104,31 +104,7 @@ namespace PumiikaVChiniika
                 " Минути\n" + recipeDifficulty[selectedIndex] +
                 "\n" + recipeCategory[selectedIndex];
         }
-        private void GettingInfoAboutRecipesForPageThree(FormView formView, List<string> ingredients, List<string> quantities, out string selectedRecipeInstructions, string description, string cookingTimr, string difficulty, string category, string name)
-        {
-            List<string> recipeInstructions = formView.GetRecipeInstructions();
-            List<int> recipeId = formView.GetRecipeId();
-            List<string> recipeDescription = formView.GetRecipeDescription();
-            List<int> recipePrepTime = formView.GetRecipePrepTime();
-            List<string> recipeDifficulty = formView.GetRecipeDifficulty();
-            List<string> recipeCategory = formView.GetRecipeCategoryName();
-            int selectedIndex = listBox4.SelectedIndex;
-            int id = recipeId[selectedIndex];
-            List<string> recipeName = formView.GetRecipeNameByIndex(id);
-            int selectedRecipeId = recipeId[selectedIndex];
-            ingredients = formView.GetIngredientsForRecipe(selectedRecipeId);
-            quantities = formView.GetIngredientQuantityForRecipe(selectedRecipeId);
-            selectedRecipeInstructions = recipeInstructions[selectedIndex];
-            description = recipeDescription[selectedIndex];
-            cookingTimr = recipePrepTime[selectedIndex] + " Минути";
-            difficulty = recipeDifficulty[selectedIndex];
-            category = recipeCategory[selectedIndex];
-            name = recipeName[selectedIndex];
-            /* extraInfo = recipeDescription[selectedIndex] +
-                "\n" + recipePrepTime[selectedIndex] +
-                " minutes\n" + recipeDifficulty[selectedIndex] +
-                "\n" + recipeCategory[selectedIndex];*/
-        }
+
         private void RecievingRecipeNamesInAllListBoxes(List<string> recipeNames)
         {
             foreach (string name in recipeNames)
@@ -144,16 +120,7 @@ namespace PumiikaVChiniika
             listBox2.Items.Clear();
             richTextBox6.Clear();
         }
-        /* private void ClearAfterAChangeInThirdTab()
-         {
-             richTextBox4.Clear();
-             textBox5.Clear();
-             textBox4.Clear();
-             textBox6.Clear();
-             richTextBox3.Clear();
-             comboBox4.Items.Clear();
-             comboBox3.Items.Clear();
-         }*/
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -223,7 +190,9 @@ namespace PumiikaVChiniika
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
 
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -278,8 +247,8 @@ namespace PumiikaVChiniika
 
             MessageBox.Show("Recipe added successfully!");
 
-            UIRefresh(formView); 
-            LoadIngredientsIntoListBox6(formView); 
+            UIRefresh(formView);
+            LoadIngredientsIntoListBox6(formView);
             listBox7.Items.Clear();
             richTextBox1.Clear();
             richTextBox2.Clear();
@@ -293,6 +262,17 @@ namespace PumiikaVChiniika
 
 
 
+        }
+
+        private void listBox8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void listBox9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
