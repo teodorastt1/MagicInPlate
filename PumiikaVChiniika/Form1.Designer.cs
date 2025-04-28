@@ -106,6 +106,7 @@
             // 
             // tabPageAddIngredient
             // 
+            tabPageAddIngredient.BackgroundImage = Properties.Resources.GOTVIM;
             tabPageAddIngredient.Controls.Add(label24);
             tabPageAddIngredient.Controls.Add(listBox5);
             tabPageAddIngredient.Controls.Add(textBox7);
@@ -122,7 +123,8 @@
             // label24
             // 
             label24.AutoSize = true;
-            label24.Location = new Point(100, 45);
+            label24.BackColor = SystemColors.ActiveCaption;
+            label24.Location = new Point(51, 40);
             label24.Name = "label24";
             label24.Size = new Size(231, 35);
             label24.TabIndex = 4;
@@ -132,7 +134,7 @@
             // 
             listBox5.FormattingEnabled = true;
             listBox5.ItemHeight = 35;
-            listBox5.Location = new Point(100, 108);
+            listBox5.Location = new Point(51, 108);
             listBox5.Name = "listBox5";
             listBox5.SelectionMode = SelectionMode.None;
             listBox5.Size = new Size(317, 459);
@@ -140,25 +142,27 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(725, 109);
+            textBox7.Location = new Point(956, 108);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(224, 41);
             textBox7.TabIndex = 2;
             // 
             // buttonForAdding
             // 
-            buttonForAdding.Location = new Point(725, 189);
+            buttonForAdding.BackColor = SystemColors.ActiveCaption;
+            buttonForAdding.Location = new Point(956, 407);
             buttonForAdding.Name = "buttonForAdding";
             buttonForAdding.Size = new Size(224, 54);
             buttonForAdding.TabIndex = 1;
             buttonForAdding.Text = "Добавяне";
-            buttonForAdding.UseVisualStyleBackColor = true;
+            buttonForAdding.UseVisualStyleBackColor = false;
             buttonForAdding.Click += button4_Click;
             // 
             // labelForNewitem
             // 
             labelForNewitem.AutoSize = true;
-            labelForNewitem.Location = new Point(682, 58);
+            labelForNewitem.BackColor = SystemColors.ActiveCaption;
+            labelForNewitem.Location = new Point(1010, 60);
             labelForNewitem.Name = "labelForNewitem";
             labelForNewitem.Size = new Size(160, 35);
             labelForNewitem.TabIndex = 0;
@@ -262,9 +266,9 @@
             label3.ImageAlign = ContentAlignment.TopLeft;
             label3.Location = new Point(27, 28);
             label3.Name = "label3";
-            label3.Size = new Size(824, 106);
+            label3.Size = new Size(818, 53);
             label3.TabIndex = 4;
-            label3.Text = "Добре дошли в \"Magic In Plate\"\r\n – вкусна магия на всяка страница!";
+            label3.Text = "Добре дошли в \"Magic In Plate\"";
             label3.UseMnemonic = false;
             label3.Click += label3_Click;
             // 
@@ -566,7 +570,9 @@
             // label27
             // 
             label27.AutoSize = true;
-            label27.Location = new Point(491, 381);
+            label27.BackColor = Color.SteelBlue;
+            label27.ForeColor = Color.Orange;
+            label27.Location = new Point(499, 377);
             label27.Name = "label27";
             label27.Size = new Size(155, 35);
             label27.TabIndex = 37;
@@ -575,7 +581,9 @@
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(51, 341);
+            label23.BackColor = Color.SteelBlue;
+            label23.ForeColor = Color.Orange;
+            label23.Location = new Point(7, 341);
             label23.Name = "label23";
             label23.Size = new Size(216, 35);
             label23.TabIndex = 36;
@@ -583,7 +591,7 @@
             // 
             // richTextBox3
             // 
-            richTextBox3.Location = new Point(491, 419);
+            richTextBox3.Location = new Point(508, 431);
             richTextBox3.Name = "richTextBox3";
             richTextBox3.Size = new Size(174, 228);
             richTextBox3.TabIndex = 35;
@@ -593,7 +601,7 @@
             // 
             listBox9.FormattingEnabled = true;
             listBox9.ItemHeight = 35;
-            listBox9.Location = new Point(271, 398);
+            listBox9.Location = new Point(255, 439);
             listBox9.Name = "listBox9";
             listBox9.Size = new Size(148, 214);
             listBox9.TabIndex = 34;
@@ -603,7 +611,7 @@
             // 
             listBox8.FormattingEnabled = true;
             listBox8.ItemHeight = 35;
-            listBox8.Location = new Point(72, 398);
+            listBox8.Location = new Point(7, 398);
             listBox8.Name = "listBox8";
             listBox8.Size = new Size(135, 249);
             listBox8.TabIndex = 33;
@@ -636,7 +644,7 @@
             label20.BackColor = Color.SteelBlue;
             label20.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label20.ForeColor = Color.Orange;
-            label20.Location = new Point(238, 319);
+            label20.Location = new Point(189, 398);
             label20.Name = "label20";
             label20.Size = new Size(264, 35);
             label20.TabIndex = 29;

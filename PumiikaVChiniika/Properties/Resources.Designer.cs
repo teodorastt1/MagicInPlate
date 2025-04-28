@@ -83,6 +83,16 @@ namespace PumiikaVChiniika.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GOTVIM {
+            get {
+                object obj = ResourceManager.GetObject("GOTVIM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ingredients_noodles_with_vegetables_notebook_23_2148551727_resized {
             get {
                 object obj = ResourceManager.GetObject("ingredients-noodles-with-vegetables-notebook_23-2148551727_resized", resourceCulture);
