@@ -63,6 +63,26 @@ namespace PumiikaVChiniika.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns {
+            get {
+                object obj = ResourceManager.GetObject("360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns1 {
+            get {
+                object obj = ResourceManager.GetObject("360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _6039758_resized__1_ {
             get {
                 object obj = ResourceManager.GetObject("6039758_resized (1)", resourceCulture);
@@ -83,9 +103,89 @@ namespace PumiikaVChiniika.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DobavyaneNaProduct {
+            get {
+                object obj = ResourceManager.GetObject("DobavyaneNaProduct", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DobavyaneNaProduct1 {
+            get {
+                object obj = ResourceManager.GetObject("DobavyaneNaProduct1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap feeding_large_groups {
+            get {
+                object obj = ResourceManager.GetObject("feeding-large-groups", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap feeding_large_groups1 {
+            get {
+                object obj = ResourceManager.GetObject("feeding-large-groups1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap feeding_large_groups2 {
+            get {
+                object obj = ResourceManager.GetObject("feeding-large-groups2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GOTVIM {
             get {
                 object obj = ResourceManager.GetObject("GOTVIM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GOTVIM1 {
+            get {
+                object obj = ResourceManager.GetObject("GOTVIM1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IndiiciZaProekta {
+            get {
+                object obj = ResourceManager.GetObject("IndiiciZaProekta", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +213,39 @@ namespace PumiikaVChiniika.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NachalnaStranica {
+            get {
+                object obj = ResourceManager.GetObject("NachalnaStranica", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pasta_1024x683 {
+            get {
+                object obj = ResourceManager.GetObject("Pasta-1024x683", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pexels_enginakyurt_1435895_compressed_resized {
             get {
                 object obj = ResourceManager.GetObject("pexels-enginakyurt-1435895_compressed_resized", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Podpravki {
+            get {
+                object obj = ResourceManager.GetObject("Podpravki", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

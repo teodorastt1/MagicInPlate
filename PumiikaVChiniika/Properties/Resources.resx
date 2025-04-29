@@ -118,11 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ingredients-noodles-with-vegetables-notebook_23-2148551727_resized" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ingredients-noodles-with-vegetables-notebook_23-2148551727_resized.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="6039758_resized (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6039758_resized (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DobavyaneNaProduct1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DobavyaneNaProduct.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NachalnaStranica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NachalnaStranica.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="feeding-large-groups" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\feeding-large-groups.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GOTVIM1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GOTVIM.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="feeding-large-groups2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\feeding-large-groups.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="9760871_resized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9760871_resized.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,10 +148,31 @@
   <data name="mini-homemade-strawberry-shortcake-pastry-beige-background_resized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mini-homemade-strawberry-shortcake-pastry-beige-background_resized.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pexels-enginakyurt-1435895_compressed_resized" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pexels-enginakyurt-1435895_compressed_resized.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DobavyaneNaProduct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DobavyaneNaProduct.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Podpravki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Podpravki.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ingredients-noodles-with-vegetables-notebook_23-2148551727_resized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ingredients-noodles-with-vegetables-notebook_23-2148551727_resized.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GOTVIM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GOTVIM.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pexels-enginakyurt-1435895_compressed_resized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-enginakyurt-1435895_compressed_resized.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IndiiciZaProekta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IndiiciZaProekta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pasta-1024x683" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pasta-1024x683.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="feeding-large-groups1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\feeding-large-groups.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

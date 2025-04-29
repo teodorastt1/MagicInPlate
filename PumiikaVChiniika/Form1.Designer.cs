@@ -106,7 +106,7 @@
             // 
             // tabPageAddIngredient
             // 
-            tabPageAddIngredient.BackgroundImage = Properties.Resources.GOTVIM;
+            tabPageAddIngredient.BackgroundImage = Properties.Resources.GOTVIM1;
             tabPageAddIngredient.Controls.Add(label24);
             tabPageAddIngredient.Controls.Add(listBox5);
             tabPageAddIngredient.Controls.Add(textBox7);
@@ -189,7 +189,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.SkyBlue;
-            tabPage1.BackgroundImage = Properties.Resources.ingredients_noodles_with_vegetables_notebook_23_2148551727_resized;
+            tabPage1.BackgroundImage = Properties.Resources.NachalnaStranica;
             tabPage1.Controls.Add(richTextBox6);
             tabPage1.Controls.Add(label22);
             tabPage1.Controls.Add(richTextBox5);
@@ -317,7 +317,7 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.Transparent;
-            tabPage2.BackgroundImage = Properties.Resources.pexels_enginakyurt_1435895_compressed_resized;
+            tabPage2.BackgroundImage = Properties.Resources.feeding_large_groups2;
             tabPage2.Controls.Add(richTextBox1);
             tabPage2.Controls.Add(listBox7);
             tabPage2.Controls.Add(label26);
@@ -537,7 +537,8 @@
             // 
             // tabPage3
             // 
-            tabPage3.BackgroundImage = Properties.Resources._9760871_resized;
+            tabPage3.BackgroundImage = Properties.Resources._360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns1;
+            tabPage3.BackgroundImageLayout = ImageLayout.Stretch;
             tabPage3.Controls.Add(label27);
             tabPage3.Controls.Add(label23);
             tabPage3.Controls.Add(richTextBox3);
@@ -784,7 +785,7 @@
             // tabPage4
             // 
             tabPage4.BackColor = Color.OldLace;
-            tabPage4.BackgroundImage = Properties.Resources.mini_homemade_strawberry_shortcake_pastry_beige_background_resized;
+            tabPage4.BackgroundImage = Properties.Resources.IndiiciZaProekta;
             tabPage4.Controls.Add(label12);
             tabPage4.Controls.Add(button2);
             tabPage4.Controls.Add(listBox3);
@@ -799,10 +800,10 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.BackColor = Color.Transparent;
+            label12.BackColor = Color.White;
             label12.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            label12.ForeColor = Color.OrangeRed;
-            label12.Location = new Point(7, 3);
+            label12.ForeColor = Color.Orange;
+            label12.Location = new Point(182, 499);
             label12.Name = "label12";
             label12.Size = new Size(795, 114);
             label12.TabIndex = 3;
@@ -810,12 +811,12 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.MistyRose;
+            button2.BackColor = Color.White;
             button2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            button2.ForeColor = Color.LightCoral;
-            button2.Location = new Point(875, 635);
+            button2.ForeColor = Color.Orange;
+            button2.Location = new Point(1050, 499);
             button2.Name = "button2";
-            button2.Size = new Size(150, 52);
+            button2.Size = new Size(134, 114);
             button2.TabIndex = 2;
             button2.Text = "Изтрий";
             button2.UseVisualStyleBackColor = false;
@@ -823,21 +824,21 @@
             // 
             // listBox3
             // 
-            listBox3.BackColor = Color.MistyRose;
+            listBox3.BackColor = Color.Orange;
             listBox3.FormattingEnabled = true;
             listBox3.ItemHeight = 35;
-            listBox3.Location = new Point(625, 180);
+            listBox3.Location = new Point(643, 163);
             listBox3.Name = "listBox3";
-            listBox3.Size = new Size(401, 389);
+            listBox3.Size = new Size(334, 319);
             listBox3.TabIndex = 1;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.BackColor = Color.Transparent;
+            label11.BackColor = Color.Orange;
             label11.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label11.ForeColor = Color.Salmon;
-            label11.Location = new Point(350, 180);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(350, 163);
             label11.Name = "label11";
             label11.Size = new Size(244, 35);
             label11.TabIndex = 0;
