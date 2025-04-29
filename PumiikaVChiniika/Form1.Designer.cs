@@ -386,7 +386,7 @@
             // 
             listBox6.FormattingEnabled = true;
             listBox6.ItemHeight = 35;
-            listBox6.Location = new Point(466, 85);
+            listBox6.Location = new Point(457, 88);
             listBox6.Name = "listBox6";
             listBox6.SelectionMode = SelectionMode.MultiSimple;
             listBox6.Size = new Size(171, 284);
