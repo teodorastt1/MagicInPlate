@@ -14,7 +14,7 @@ namespace PumiikaVChiniika
             RecievingRecipeNamesInAllListBoxes(recipeNames);
             LoadIngredientsIntoListBox5(formView);
             LoadIngredientsIntoListBox6(formView);
-
+            LoadIngredientsIntoListBox8(formView);
 
 
         }
@@ -274,12 +274,22 @@ namespace PumiikaVChiniika
             }
         }
 
+        private void LoadIngredientsIntoListBox8(FormView formView)
+        {
+            listBox8.Items.Clear();
+            List<string> ingredients = formView.GetAllIngredients();
+            foreach (var ingredient in ingredients)
+            {
+                listBox8.Items.Add(ingredient);
+            }
+        }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
 
-            
+            LoadIngredientsIntoListBox8(formView);
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -352,6 +362,12 @@ namespace PumiikaVChiniika
         private void listBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+            var selectedProducts = listBox8.SelectedItems;
+            listBox9.Items.Clear();
+            foreach (var product in selectedProducts)
+            {
+                listBox9.Items.Add(product);
+            }
 
         }
 
