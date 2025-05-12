@@ -1,4 +1,5 @@
 using PumiikaVChiniika.Models;
+using System.Windows.Forms;
 
 namespace PumiikaVChiniika
 {
@@ -207,10 +208,17 @@ namespace PumiikaVChiniika
             int recipeCookingTime;
 
             GettingInfoAboutRecipesForPageFourChange(formView, out ingredients, out quantities, out selectedRecipeInstructions, out description, out recipeCookingTime, out recipeDifficulty, out recipeCategory);
-
+            LoadIngredientsIntoListBox8(formView);
             ClearAfterAChangeInForthTab();
 
-
+            if (listBox4.SelectedItem is Recipe selected)
+            {
+                textBox5.Text = selected.Name;
+                textBox4.Text = selected.Description;
+                textBox6.Text = selected.CookingTime;
+                comboBox4.Text = selected.Difficulty;
+                comboBox3.Text = selected.Category;
+            }
 
 
 
@@ -287,8 +295,32 @@ namespace PumiikaVChiniika
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            FormView formView = new FormView();
             LoadIngredientsIntoListBox8(formView);
+            if (listBox4.SelectedItem is Recipe selectedRecipe)
+            {
+
+                selectedRecipe.Name = textBox5.Text;
+                selectedRecipe.Description = textBox4.Text;
+                selectedRecipe.CookingTime = textBox6.Text;
+                selectedRecipe.Difficulty = comboBox4.Text;
+                selectedRecipe.Category = comboBox3.Text;
+
+
+                int index = listBox4.SelectedIndex;
+                listBox4.Items.RemoveAt(index);
+                listBox4.Items.Insert(index, selectedRecipe);
+                listBox4.SelectedIndex = index;
+
+
+                MessageBox.Show("Рецептата е обновена успешно!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Моля, избери рецепта за промяна.");
+            }
+
+
 
         }
 
@@ -374,6 +406,20 @@ namespace PumiikaVChiniika
         private void listBox9_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        public class Recipe 
+        {
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public string CookingTime { get; set; }
+            public string Difficulty { get; set; }
+            public string Category { get; set; }
+
+            public override string ToString()
+            {
+                return Name;
+            }
         }
     }
 }
