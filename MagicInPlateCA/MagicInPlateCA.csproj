@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PumiikaVChiniika\PumiikaVChiniika.csproj">
+      <Project>{01c83e03-4829-4d0d-b077-4f4feb3432c7}</Project>
+      <Name>PumiikaVChiniika</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

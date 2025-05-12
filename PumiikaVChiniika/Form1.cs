@@ -1,6 +1,7 @@
 using PumiikaVChiniika.Models;
 using System.Windows.Forms;
 
+
 namespace PumiikaVChiniika
 {
     public partial class Form1 : Form
@@ -108,7 +109,7 @@ namespace PumiikaVChiniika
                 " Минути\n" + recipeDifficulty[selectedIndex] +
                 "\n" + recipeCategory[selectedIndex];
         }
-        private void GettingInfoAboutRecipesForPageFourChange(FormView formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string description,out int recipeCookingTime,out string recipeDifficulty,out string recipeCategory)
+        private void GettingInfoAboutRecipesForPageFourChange(FormView formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string description, out int recipeCookingTime, out string recipeDifficulty, out string recipeCategory)
         {
             List<string> recipeInstructions = formView.GetRecipeInstructions();
             List<int> recipeId = formView.GetRecipeId();
@@ -121,12 +122,12 @@ namespace PumiikaVChiniika
             ingredients = formView.GetIngredientsForRecipe(selectedRecipeId);
             quantities = formView.GetIngredientQuantityForRecipe(selectedRecipeId);
             selectedRecipeInstructions = recipeInstructions[selectedIndex];
-            description=recipeDescriptions[selectedIndex];
-            recipeCookingTime=recipePrepTime[selectedIndex];
-            recipeDifficulty=recipeDifficulties[selectedIndex];
+            description = recipeDescriptions[selectedIndex];
+            recipeCookingTime = recipePrepTime[selectedIndex];
+            recipeDifficulty = recipeDifficulties[selectedIndex];
             recipeCategory = recipeCategories[selectedIndex];
 
-            
+
         }
 
 
@@ -154,7 +155,7 @@ namespace PumiikaVChiniika
             textBox5.Clear();
             textBox4.Clear();
             textBox6.Clear();
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -393,7 +394,7 @@ namespace PumiikaVChiniika
 
         private void listBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             var selectedProducts = listBox8.SelectedItems;
             listBox9.Items.Clear();
             foreach (var product in selectedProducts)
@@ -405,10 +406,10 @@ namespace PumiikaVChiniika
 
         private void listBox9_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
-        public class Recipe 
+        public class Recipe
         {
             public string Name { get; set; }
             public string Description { get; set; }
@@ -420,6 +421,11 @@ namespace PumiikaVChiniika
             {
                 return Name;
             }
+        }
+
+        private void richTextBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
