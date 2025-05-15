@@ -644,6 +644,7 @@
             richTextBox4.Size = new Size(308, 214);
             richTextBox4.TabIndex = 31;
             richTextBox4.Text = "";
+            richTextBox4.TextChanged += richTextBox4_TextChanged;
             // 
             // label20
             // 
