@@ -1,4 +1,5 @@
 using PumiikaVChiniika.Models;
+using System.Text;
 
 namespace PumiikaVChiniika
 {
@@ -107,7 +108,7 @@ namespace PumiikaVChiniika
                 " Минути\n" + recipeDifficulty[selectedIndex] +
                 "\n" + recipeCategory[selectedIndex];
         }
-        private void GettingInfoAboutRecipesForPageFourChange(FormView formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string description,out int recipeCookingTime,out string recipeDifficulty,out string recipeCategory)
+        private void GettingInfoAboutRecipesForPageFourChange(FormView formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string description, out int recipeCookingTime, out string recipeDifficulty, out string recipeCategory)
         {
             List<string> recipeInstructions = formView.GetRecipeInstructions();
             List<int> recipeId = formView.GetRecipeId();
@@ -120,12 +121,12 @@ namespace PumiikaVChiniika
             ingredients = formView.GetIngredientsForRecipe(selectedRecipeId);
             quantities = formView.GetIngredientQuantityForRecipe(selectedRecipeId);
             selectedRecipeInstructions = recipeInstructions[selectedIndex];
-            description=recipeDescriptions[selectedIndex];
-            recipeCookingTime=recipePrepTime[selectedIndex];
-            recipeDifficulty=recipeDifficulties[selectedIndex];
+            description = recipeDescriptions[selectedIndex];
+            recipeCookingTime = recipePrepTime[selectedIndex];
+            recipeDifficulty = recipeDifficulties[selectedIndex];
             recipeCategory = recipeCategories[selectedIndex];
 
-            
+
         }
 
 
@@ -153,7 +154,7 @@ namespace PumiikaVChiniika
             textBox5.Clear();
             textBox4.Clear();
             textBox6.Clear();
-            
+            richTextBox6.Clear();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -200,60 +201,56 @@ namespace PumiikaVChiniika
 
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             FormView formView = new FormView();
-            List<string> ingredients, quantities;
-            string selectedRecipeInstructions, description, recipeDifficulty, recipeCategory;
-            int recipeCookingTime;
 
-            GettingInfoAboutRecipesForPageFourChange(formView, out ingredients, out quantities, out selectedRecipeInstructions, out description, out recipeCookingTime, out recipeDifficulty, out recipeCategory);
+
+
+
+            GettingInfoAboutRecipesForPageFourChange(
+                formView,
+                out List<string> ingredients,
+                out List<string> quantities,
+                out string selectedRecipeInstructions,
+                out string description,
+                out int recipeCookingTime,
+                out string recipeDifficulty,
+                out string recipeCategory
+            );
+
 
             ClearAfterAChangeInForthTab();
 
 
+            textBox5.Text = listBox4.SelectedItem.ToString();
+            textBox4.Text = description;
+            textBox6.Text = recipeCookingTime.ToString();
+            comboBox4.SelectedItem = recipeDifficulty;
+            comboBox3.SelectedItem = recipeCategory;
+            richTextBox4.Text = selectedRecipeInstructions;
 
 
-
-
-
-
-            /*                               
-            ////////////////                 
-            //izpisvane here                 
-            FormView formView = new FormView();
-            string name = textBox5.Text;
-            string description = textBox4.Text;
-            int prepTime = int.Parse(textBox6.Text);
-            string difficulty = comboBox4.SelectedItem.ToString();
-            string category = comboBox3.SelectedItem.ToString();
-            string instructions = richTextBox4.Text;
-
-            List<string> selectedIngredients = listBox9.Items.Cast<string>().ToList();
-            List<string> quantities = richTextBox3.Lines.ToList();
-
-            if (selectedIngredients.Count != quantities.Count)
+            List<string> allIngredients = formView.GetAllIngredients();
+            foreach (var ingredient in allIngredients)
             {
-                MessageBox.Show("The number of ingredients and quantities do not match!");
-                return;
+                listBox8.Items.Add(ingredient);
             }
 
-            ///delete here
-            formView.AddRecipe(name, description, prepTime, difficulty, instructions, category, selectedIngredients, quantities);
 
-            MessageBox.Show("Recipe changed successfully!");
+            foreach (var ingredient in ingredients)
+            {
+                listBox9.Items.Add(ingredient);
+            }
 
-            //trqbva da se smeni
-            UIRefresh(formView);
-            LoadIngredientsIntoListBox6(formView);
-            listBox7.Items.Clear();
-            richTextBox1.Clear();
-            richTextBox2.Clear();
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            LoadCategoriesIntoCheckBOxesForAddingAndChange();
-            LoadDifficultiesIntoCheckBoxesForAddingAndChange();
-            */
+
+            int i = 0;
+            foreach (var ingredient in ingredients)
+            {
+                if (i < quantities.Count)
+                {
+                    richTextBox3.AppendText(quantities[i] + Environment.NewLine);
+                }
+                i++;
+            }
         }
         private void LoadIngredientsIntoListBox5(FormView formView)
         {
@@ -277,9 +274,55 @@ namespace PumiikaVChiniika
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            if (listBox4.SelectedIndex < 0)
+            {
+                MessageBox.Show("Моля изберете рецепта, която да редактирате.");
+                return;
+            }
 
-            
+            FormView formView = new FormView();
+            int selectedRecipeId = formView.GetRecipeId()[listBox4.SelectedIndex];
+
+
+            string name = textBox5.Text.Trim();
+            string description = textBox4.Text.Trim();
+            string instructions = richTextBox4.Text.Trim();
+            string difficulty = comboBox4.SelectedItem?.ToString();
+            string category = comboBox3.SelectedItem?.ToString();
+            int prepTime;
+
+            if (!int.TryParse(textBox6.Text.Trim(), out prepTime))
+            {
+                MessageBox.Show("Моля въведете валидно време за приготвяне.");
+                return;
+            }
+
+
+            List<string> ingredients = listBox9.Items.Cast<string>().ToList();
+            List<string> quantities = new List<string>();
+            string[] lines = richTextBox3.Lines;
+
+            foreach (string line in lines)
+            {
+                quantities.Add(line);
+            }
+
+            if (ingredients.Count != quantities.Count)
+            {
+                MessageBox.Show("Броят на продуктите и количествата не съвпада.");
+                return;
+            }
+
+
+            formView.UpdateRecipe(selectedRecipeId, name, description, prepTime, difficulty, instructions, category, ingredients, quantities);
+            MessageBox.Show("Рецептата е обновена успешно!");
+
+            UIRefresh(formView);
+            ClearAfterAChangeInForthTab();
+
+            //MessageBox.Show("Възникна грешка при обновяването: " + ex.Message);
+
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -351,13 +394,13 @@ namespace PumiikaVChiniika
 
         private void listBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 
         private void listBox9_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

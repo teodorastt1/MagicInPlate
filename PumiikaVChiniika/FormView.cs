@@ -158,5 +158,44 @@ namespace PumiikaVChiniika
 
 
         }
+        public void UpdateRecipe(int recipeId, string name, string description, int prepTime, string difficulty, string instructions, string categoryName, List<string> ingredientNames, List<string> quantities)
+        {
+            var recipe = context.Recipes.FirstOrDefault(r => r.RecipeId == recipeId);
+            if (recipe == null) throw new Exception("Recipe not found.");
+
+            var category = context.Categories.FirstOrDefault(c => c.Name == categoryName);
+            if (category == null) throw new Exception("Category not found.");
+
+            // Обновяване на основните полета
+            recipe.Name = name;
+            recipe.Description = description;
+            recipe.PreparationTime = prepTime;
+            recipe.Difficulty = difficulty;
+            recipe.Instructions = instructions;
+            recipe.CategoryId = category.CategoryId;
+
+            // Премахване на старите съставки
+            var existingIngredients = context.RecipeIngredients.Where(ri => ri.RecipeId == recipeId).ToList();
+            context.RecipeIngredients.RemoveRange(existingIngredients);
+
+            // Добавяне на новите съставки
+            for (int i = 0; i < ingredientNames.Count; i++)
+            {
+                string ingredientName = ingredientNames[i];
+                string quantity = quantities[i];
+
+                var ingredient = context.Ingredients.FirstOrDefault(ing => ing.Name == ingredientName);
+                if (ingredient == null) throw new Exception($"Ingredient '{ingredientName}' not found.");
+
+                context.RecipeIngredients.Add(new RecipeIngredient
+                {
+                    RecipeId = recipe.RecipeId,
+                    IngredientId = ingredient.IngredientId,
+                    Quantity = quantity
+                });
+            }
+
+            context.SaveChanges();
+        }
     }
 }
