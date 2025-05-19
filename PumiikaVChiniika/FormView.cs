@@ -1,4 +1,5 @@
-﻿using PumiikaVChiniika.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using PumiikaVChiniika.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -167,7 +168,7 @@ namespace PumiikaVChiniika
             var category = context.Categories.FirstOrDefault(c => c.Name == categoryName);
             if (category == null) throw new Exception("Category not found.");
 
-            // Обновяване на основните полета
+            
             recipe.Name = name;
             recipe.Description = description;
             recipe.PreparationTime = prepTime;
@@ -175,11 +176,11 @@ namespace PumiikaVChiniika
             recipe.Instructions = instructions;
             recipe.CategoryId = category.CategoryId;
 
-            // Премахване на старите съставки
+            
             var existingIngredients = context.RecipeIngredients.Where(ri => ri.RecipeId == recipeId).ToList();
             context.RecipeIngredients.RemoveRange(existingIngredients);
 
-            // Добавяне на новите съставки
+            
             for (int i = 0; i < ingredientNames.Count; i++)
             {
                 string ingredientName = ingredientNames[i];
@@ -197,6 +198,13 @@ namespace PumiikaVChiniika
             }
 
             context.SaveChanges();
+        }
+
+        public List<string> GetIngredientNames()
+        {
+            return context.Ingredients
+                .Select(i => i.Name)
+                .ToList();
         }
     }
 }

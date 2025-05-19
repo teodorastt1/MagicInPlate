@@ -203,7 +203,13 @@ namespace PumiikaVChiniika
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             FormView formView = new FormView();
-
+            List<string> ingredients;
+            List<string> quantities;
+            string selectedRecipeInstructions;
+            string description;
+            int recipeCookingTime;
+            string recipeDifficulty;
+            string recipeCategory;
             GettingInfoAboutRecipesForPageFourChange(formView, out ingredients, out quantities, out selectedRecipeInstructions, out description, out recipeCookingTime, out recipeDifficulty, out recipeCategory);
             LoadIngredientsIntoListBox8(formView);
             ClearAfterAChangeInForthTab();

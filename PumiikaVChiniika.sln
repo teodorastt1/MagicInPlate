@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PumiikaVChiniika", "PumiikaVChiniika\PumiikaVChiniika.csproj", "{01C83E03-4829-4D0D-B077-4F4FEB3432C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicInPlateCApp", "MagicInPlateCApp\MagicInPlateCApp.csproj", "{D9ECC554-FB7C-4EEE-B29F-32F3987FD89F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicInPlateConApp", "MagicInPlateConApp\MagicInPlateConApp.csproj", "{E818D1EF-9215-4962-9735-581B737467EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{01C83E03-4829-4D0D-B077-4F4FEB3432C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01C83E03-4829-4D0D-B077-4F4FEB3432C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01C83E03-4829-4D0D-B077-4F4FEB3432C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D9ECC554-FB7C-4EEE-B29F-32F3987FD89F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9ECC554-FB7C-4EEE-B29F-32F3987FD89F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9ECC554-FB7C-4EEE-B29F-32F3987FD89F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9ECC554-FB7C-4EEE-B29F-32F3987FD89F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E818D1EF-9215-4962-9735-581B737467EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E818D1EF-9215-4962-9735-581B737467EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E818D1EF-9215-4962-9735-581B737467EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E818D1EF-9215-4962-9735-581B737467EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
