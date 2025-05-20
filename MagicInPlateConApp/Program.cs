@@ -266,8 +266,7 @@ namespace MagicInPlateConApp
                 if (!formView.GetIngredientNames().Contains(ingredient, StringComparer.OrdinalIgnoreCase))
                 {
                     Console.WriteLine($" Продуктът \"{ingredient}\" не съществува в базата данни.");
-                    ingredients.Add(ingredient);
-                    return;
+                   // ingredients.Add(ingredient);
                 }
 
                
@@ -336,12 +335,6 @@ namespace MagicInPlateConApp
         }
 
 
-        //static void ShowError(string message)
-        //{
-        //    Console.ForegroundColor = ConsoleColor.Red;
-        //    Console.WriteLine(message);
-        //    Console.ResetColor();
-        //}
     }
 }
     
