@@ -258,105 +258,197 @@ namespace MagicInPlateConApp
 
         private static void AddRecipe(FormView formView)
         {
-             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(" ---Magic In Plate--- \n" +
-                                "Добавяне на рецепта\n ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(" ---Magic In Plate--- \nДобавяне на рецепта\n ");
 
-            Console.Write("Име на рецепта: ");
-            string name = Console.ReadLine();
-
-            if (string.IsNullOrWhiteSpace(name))
+            string name;
+            while (true)
             {
-                Console.WriteLine("Името на рецептата не може да бъде празно.");
-                return;
+                Console.Write("Име на рецепта: ");
+                name = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    Console.WriteLine("Името на рецептата не може да бъде празно.");
+                    continue;
+                }
+                if (name.Length < 2)
+                {
+                    Console.WriteLine("Името на рецептата трябва да съдържа поне 2 букви.");
+                    continue;
+                }
+                if (!IsBulgarianText(name))
+                {
+                    Console.WriteLine("Името не трябва да съдържа английски букви.");
+                    continue;
+                }
+                break;
             }
 
-            Console.Write("Описание: ");
-            string description = Console.ReadLine();
-            if (string.IsNullOrWhiteSpace(description))
+            string description;
+            while (true)
             {
-                Console.WriteLine("Името на описанието не може да бъде празно.");
-                return;
+                Console.Write("Описание: ");
+                description = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(description))
+                {
+                    Console.WriteLine("Описанието не може да бъде празно.");
+                    continue;
+                }
+                if (description.Length < 2)
+                {
+                    Console.WriteLine("Името на рецептата трябва да съдържа поне 2 букви.");
+                    continue;
+                }
+                if (!IsBulgarianText(description))
+                {
+                    Console.WriteLine("Описанието съдържа английски букви. Използвайте български.");
+                    continue;
+                }
+                break;
             }
 
-            Console.Write("Време за приготвяне (в минути): ");
-            if (!int.TryParse(Console.ReadLine(), out int prepTime) || prepTime <= 0)
+            int prepTime;
+            while (true)
             {
-                Console.WriteLine("Невалидно време за приготвяне.");
+                Console.Write("Време за приготвяне (в минути): ");
+                if (!int.TryParse(Console.ReadLine(), out prepTime) || prepTime <= 0)
+                {
+                    Console.WriteLine("Невалидно време за приготвяне.");
+                    continue;
+                }
+                break;
             }
 
-            Console.Write("Трудност (Лесно/Средно/Трудно): ");
-            string difficulty = Console.ReadLine();
-
-            if (string.IsNullOrWhiteSpace(difficulty))
+            string difficulty;
+            while (true)
             {
-                Console.WriteLine("Моля, въведете трудност.");
+                Console.Write("Трудност (Лесно/Средно/Трудно): ");
+                difficulty = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(difficulty))
+                {
+                    Console.WriteLine("Моля, въведете трудност.");
+                    continue;
+                }
+
+                var diffLower = difficulty.ToLower();
+                if (diffLower != "лесно" && diffLower != "средно" && diffLower != "трудно")
+                {
+                    Console.WriteLine("Невалидна стойност за трудност. Допустими: Лесно, Средно, Трудно.");
+                    continue;
+                }
+                break;
             }
 
-            Console.Write("Категория (Предястие/Основно/Десерт): ");
-            string category = Console.ReadLine();
-
-            if (string.IsNullOrWhiteSpace(category))
+            string category;
+            while (true)
             {
-                Console.WriteLine("Моля, въведете категория.");
+                Console.Write("Категория (Предястие/Основно/Десерт): ");
+                category = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(category))
+                {
+                    Console.WriteLine("Моля, въведете категория.");
+                    continue;
+                }
+
+                var catLower = category.ToLower();
+                if (catLower != "предястие" && catLower != "основно" && catLower != "десерт")
+                {
+                    Console.WriteLine("Невалидна категория. Допустими: Предястие, Основно, Десерт.");
+                    continue;
+                }
+                break;
             }
 
-            Console.Write("Инструкции: ");
-            string instructions = Console.ReadLine();
-            if (string.IsNullOrWhiteSpace(instructions))
+            string instructions;
+            while (true)
             {
-                Console.WriteLine("Моля въведете инструкции.");
+                Console.Write("Инструкции: ");
+                instructions = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(instructions))
+                {
+                    Console.WriteLine("Моля въведете инструкции.");
+                    continue;
+                }
+                if (instructions.Length < 3)
+                {
+                    Console.WriteLine("Името на рецептата трябва да съдържа поне 3 букви.");
+                    continue;
+                }
+                if (!IsBulgarianText(instructions))
+                {
+                    Console.WriteLine("Инструкциите съдържат английски букви. Използвайте български.");
+                    continue;
+                }
+                break;
             }
 
             List<string> ingredients = new List<string>();
             List<string> quantities = new List<string>();
 
-            Console.Write("Брой съставки: ");
-            if (!int.TryParse(Console.ReadLine(), out int count) || count <= 0)
+            int count;
+            while (true)
             {
-                Console.WriteLine("Невалиден брой съставки.");
+                Console.Write("Брой съставки: ");
+                if (!int.TryParse(Console.ReadLine(), out count) || count <= 0)
+                {
+                    Console.WriteLine("Невалиден брой съставки.");
+                    continue;
+                }
+                break;
             }
 
-            List<string> availableIngredients;
-            
-                availableIngredients = formView.GetIngredientNames();
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("\n Налични продукти в базата данни:");
-                Console.WriteLine("──────────────────────────────────────");
-                foreach (var ingr in availableIngredients)
-                {
-                    Console.WriteLine($"{ingr}");
-                }
-                Console.WriteLine("──────────────────────────────────────\n");
-            
+            List<string> availableIngredients = formView.GetIngredientNames();
 
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\nНалични продукти в базата данни:");
+            Console.WriteLine("──────────────────────────────────────");
+            foreach (var ingr in availableIngredients)
+            {
+                Console.WriteLine($"{ingr}");
+            }
+            Console.WriteLine("──────────────────────────────────────\n");
 
             for (int i = 0; i < count; i++)
             {
-                Console.Write($"Продукт {i + 1}: ");
-                string ingredient = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(ingredient))
+                string ingredient;
+                while (true)
                 {
-                    Console.WriteLine($"Съставка {i + 1} не може да бъде празна.");
+                    Console.Write($"Продукт {i + 1}: ");
+                    ingredient = Console.ReadLine();
 
-                }
+                    if (string.IsNullOrWhiteSpace(ingredient))
+                    {
+                        Console.WriteLine($"Съставка {i + 1} не може да бъде празна.");
+                        continue;
+                    }
 
-                if (!formView.GetIngredientNames().Contains(ingredient, StringComparer.OrdinalIgnoreCase))
-                {
-                    Console.WriteLine($" Продуктът \"{ingredient}\" не съществува в базата данни.");
+                    if (!availableIngredients.Contains(ingredient, StringComparer.OrdinalIgnoreCase))
+                    {
+                        Console.WriteLine($"Продуктът \"{ingredient}\" не съществува в базата данни.");
+                        continue;
+                    }
+                    break;
                 }
                 ingredients.Add(ingredient);
 
-
-                Console.Write("Количество: ");
-                string quantity = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(quantity))
+                string quantity;
+                while (true)
                 {
-                    Console.WriteLine("Количеството не може да бъде празно.");
-                }
+                    Console.Write("Количество: ");
+                    quantity = Console.ReadLine();
 
+                    if (string.IsNullOrWhiteSpace(quantity))
+                    {
+                        Console.WriteLine("Количеството не може да бъде празно.");
+                        continue;
+                    }
+                    break;
+                }
                 quantities.Add(quantity);
             }
 
@@ -364,13 +456,15 @@ namespace MagicInPlateConApp
             {
                 formView.AddRecipe(name, description, prepTime, difficulty, instructions, category, ingredients, quantities);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(" Рецептата е добавена успешно!");
+                Console.WriteLine("Рецептата е добавена успешно!");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Възникна грешка при добавянето на рецептата: {ex.Message}");
             }
         }
+
+
 
 
 
@@ -437,9 +531,20 @@ namespace MagicInPlateConApp
             }
 
             Console.ResetColor();
-
         }
 
+        private static bool IsBulgarianText(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return false;
+
+            foreach (char c in input)
+            {
+                if (!((c >= 'А' && c <= 'я') || c == ' ' || c == ',' || c == '.' || c == '-' || c == '!' || c == '?' || c == 'ъ' || c == 'ь' || c == 'щ' || c == 'ю' || c == 'я'))
+                    return false;
+            }
+            return true;
+        }
     }
 }
     
