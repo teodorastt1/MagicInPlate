@@ -27,7 +27,7 @@ namespace MagicInPlateConApp
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Избор: ");
                 string choice = Console.ReadLine();
-                Console.Beep(400, 300);
+                
 
                 Console.ResetColor();
                 
@@ -118,12 +118,8 @@ namespace MagicInPlateConApp
             }
 
             Console.Write("Вашият избор: ");
-            if (!int.TryParse(Console.ReadLine(), out int index) || index < 1 || index > recipes.Count)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(" Невалиден избор.");
-                return;
-            }
+            int index = int.Parse(Console.ReadLine());
+            
 
             int recipeId = recipeIds[index - 1];
 
@@ -264,7 +260,7 @@ namespace MagicInPlateConApp
         {
              Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(" ---Magic In Plate--- \n" +
-                "Добавяне на рецепта\n ");
+                                "Добавяне на рецепта\n ");
 
             Console.Write("Име на рецепта: ");
             string name = Console.ReadLine();
@@ -287,7 +283,6 @@ namespace MagicInPlateConApp
             if (!int.TryParse(Console.ReadLine(), out int prepTime) || prepTime <= 0)
             {
                 Console.WriteLine("Невалидно време за приготвяне.");
-                return;
             }
 
             Console.Write("Трудност (Лесно/Средно/Трудно): ");
@@ -296,7 +291,6 @@ namespace MagicInPlateConApp
             if (string.IsNullOrWhiteSpace(difficulty))
             {
                 Console.WriteLine("Моля, въведете трудност.");
-                return;
             }
 
             Console.Write("Категория (Предястие/Основно/Десерт): ");
@@ -305,7 +299,6 @@ namespace MagicInPlateConApp
             if (string.IsNullOrWhiteSpace(category))
             {
                 Console.WriteLine("Моля, въведете категория.");
-                return;
             }
 
             Console.Write("Инструкции: ");
@@ -313,7 +306,6 @@ namespace MagicInPlateConApp
             if (string.IsNullOrWhiteSpace(instructions))
             {
                 Console.WriteLine("Моля въведете инструкции.");
-                return;
             }
 
             List<string> ingredients = new List<string>();
@@ -323,29 +315,20 @@ namespace MagicInPlateConApp
             if (!int.TryParse(Console.ReadLine(), out int count) || count <= 0)
             {
                 Console.WriteLine("Невалиден брой съставки.");
-                return;
             }
 
             List<string> availableIngredients;
-            try
-            {
+            
                 availableIngredients = formView.GetIngredientNames();
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("\n Налични продукти в базата данни:");
                 Console.WriteLine("──────────────────────────────────────");
                 foreach (var ingr in availableIngredients)
                 {
-                    Console.WriteLine($"• {ingr}");
+                    Console.WriteLine($"{ingr}");
                 }
                 Console.WriteLine("──────────────────────────────────────\n");
-            }
-            catch (Exception ex)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(" Неуспешно зареждане на съставките от базата данни.");
-                Console.WriteLine($"[Техническа грешка]: {ex.Message}");
-                return;
-            }
+            
 
 
             for (int i = 0; i < count; i++)
@@ -355,14 +338,13 @@ namespace MagicInPlateConApp
 
                 if (string.IsNullOrWhiteSpace(ingredient))
                 {
-                    Console.WriteLine($"Съставка №{i + 1} не може да бъде празна.");
-                    return;
+                    Console.WriteLine($"Съставка {i + 1} не може да бъде празна.");
+
                 }
 
                 if (!formView.GetIngredientNames().Contains(ingredient, StringComparer.OrdinalIgnoreCase))
                 {
                     Console.WriteLine($" Продуктът \"{ingredient}\" не съществува в базата данни.");
-                    return;
                 }
                 ingredients.Add(ingredient);
 
@@ -373,7 +355,6 @@ namespace MagicInPlateConApp
                 if (string.IsNullOrWhiteSpace(quantity))
                 {
                     Console.WriteLine("Количеството не може да бъде празно.");
-                    return;
                 }
 
                 quantities.Add(quantity);
@@ -395,10 +376,11 @@ namespace MagicInPlateConApp
 
         private static void ViewRecipes(FormView formView)
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(  " ---Magic In Plate--- \n" +
-                "Преглед на Рецепти\n ");
-           
+            Console.WriteLine(" ---Magic In Plate--- \nПреглед на Рецепти\n");
+
+            var recipeIds = formView.GetRecipeId();
             var recipeNames = formView.GetRecipeNames();
             var recipeDescriptions = formView.GetRecipeDescription();
             var prepTimes = formView.GetRecipePrepTime();
@@ -406,30 +388,57 @@ namespace MagicInPlateConApp
             var categories = formView.GetRecipeCategoryName();
             var instructions = formView.GetRecipeInstructions();
 
-            for (int i = 0; i < recipeNames.Count; i++)
+            if (recipeNames.Count == 0)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine($"[{i + 1}] {recipeNames[i]}");
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine($"Описание: {recipeDescriptions[i]}");
-                Console.WriteLine($"Време за приготвяне: {prepTimes[i]} минути");
-                Console.WriteLine($"Трудност: {difficulties[i]}");
-                Console.WriteLine($"Категория: {categories[i]}");
-                Console.WriteLine($"Инструкции: {instructions[i]}\n");
-
-                var ingredients = formView.GetIngredientsForRecipe(formView.GetRecipeId()[i]);
-                var quantities = formView.GetIngredientQuantityForRecipe(formView.GetRecipeId()[i]);
-
-                Console.WriteLine("Съставки:");
-                for (int j = 0; j < ingredients.Count; j++)
-                {
-                    Console.WriteLine($" - {ingredients[j]}: {quantities[j]}");
-                }
-                Console.WriteLine(new string('-', 40));
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(" Няма налични рецепти.");
+                Console.ResetColor();
+                return;
             }
 
-        }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Изберете рецепта:\n");
 
+            for (int i = 0; i < recipeNames.Count; i++)
+            {
+                Console.WriteLine($"[{i + 1}] {recipeNames[i]}");
+            }
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("\nВашият избор: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int choice) || choice < 1 || choice > recipeNames.Count)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(" Невалиден избор.");
+                Console.ResetColor();
+                return;
+            }
+
+            int index = choice - 1;
+
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"[{choice}] {recipeNames[index]}");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"Описание: {recipeDescriptions[index]}");
+            Console.WriteLine($"Време за приготвяне: {prepTimes[index]} минути");
+            Console.WriteLine($"Трудност: {difficulties[index]}");
+            Console.WriteLine($"Категория: {categories[index]}");
+            Console.WriteLine($"Инструкции: {instructions[index]}\n");
+
+            var ingredients = formView.GetIngredientsForRecipe(recipeIds[index]);
+            var quantities = formView.GetIngredientQuantityForRecipe(recipeIds[index]);
+
+            Console.WriteLine("Съставки:");
+            for (int j = 0; j < ingredients.Count; j++)
+            {
+                Console.WriteLine($" - {ingredients[j]}: {quantities[j]}");
+            }
+
+            Console.ResetColor();
+
+        }
 
     }
 }
