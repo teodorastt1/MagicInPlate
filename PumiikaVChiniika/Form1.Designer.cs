@@ -124,9 +124,11 @@
             // 
             label24.AutoSize = true;
             label24.BackColor = SystemColors.ActiveCaption;
-            label24.Location = new Point(51, 40);
+            label24.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label24.ForeColor = Color.Peru;
+            label24.Location = new Point(51, 87);
             label24.Name = "label24";
-            label24.Size = new Size(231, 35);
+            label24.Size = new Size(246, 35);
             label24.TabIndex = 4;
             label24.Text = "Налични продукти";
             // 
@@ -134,7 +136,7 @@
             // 
             listBox5.FormattingEnabled = true;
             listBox5.ItemHeight = 35;
-            listBox5.Location = new Point(51, 108);
+            listBox5.Location = new Point(51, 176);
             listBox5.Name = "listBox5";
             listBox5.SelectionMode = SelectionMode.None;
             listBox5.Size = new Size(317, 459);
@@ -142,15 +144,16 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(956, 108);
+            textBox7.Location = new Point(828, 176);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(224, 41);
+            textBox7.Size = new Size(352, 41);
             textBox7.TabIndex = 2;
             // 
             // buttonForAdding
             // 
             buttonForAdding.BackColor = SystemColors.ActiveCaption;
-            buttonForAdding.Location = new Point(956, 407);
+            buttonForAdding.ForeColor = Color.Maroon;
+            buttonForAdding.Location = new Point(956, 581);
             buttonForAdding.Name = "buttonForAdding";
             buttonForAdding.Size = new Size(224, 54);
             buttonForAdding.TabIndex = 1;
@@ -162,9 +165,11 @@
             // 
             labelForNewitem.AutoSize = true;
             labelForNewitem.BackColor = SystemColors.ActiveCaption;
-            labelForNewitem.Location = new Point(1010, 60);
+            labelForNewitem.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            labelForNewitem.ForeColor = Color.Peru;
+            labelForNewitem.Location = new Point(1011, 117);
             labelForNewitem.Name = "labelForNewitem";
-            labelForNewitem.Size = new Size(160, 35);
+            labelForNewitem.Size = new Size(169, 35);
             labelForNewitem.TabIndex = 0;
             labelForNewitem.Text = "Нов продукт";
             // 
@@ -213,10 +218,10 @@
             // 
             // richTextBox6
             // 
-            richTextBox6.Location = new Point(921, 216);
+            richTextBox6.Location = new Point(887, 215);
             richTextBox6.Margin = new Padding(3, 4, 3, 4);
             richTextBox6.Name = "richTextBox6";
-            richTextBox6.Size = new Size(267, 425);
+            richTextBox6.Size = new Size(278, 425);
             richTextBox6.TabIndex = 9;
             richTextBox6.Text = "";
             // 
@@ -225,7 +230,7 @@
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label22.ForeColor = Color.LightSeaGreen;
-            label22.Location = new Point(921, 137);
+            label22.Location = new Point(887, 137);
             label22.Name = "label22";
             label22.Size = new Size(280, 35);
             label22.TabIndex = 8;
@@ -236,7 +241,7 @@
             richTextBox5.Location = new Point(575, 216);
             richTextBox5.Margin = new Padding(3, 4, 3, 4);
             richTextBox5.Name = "richTextBox5";
-            richTextBox5.Size = new Size(290, 425);
+            richTextBox5.Size = new Size(270, 425);
             richTextBox5.TabIndex = 7;
             richTextBox5.Text = "";
             // 
@@ -268,7 +273,7 @@
             label3.Font = new Font("Ravie", 23.2F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.LightSeaGreen;
             label3.ImageAlign = ContentAlignment.TopLeft;
-            label3.Location = new Point(27, 28);
+            label3.Location = new Point(27, 17);
             label3.Name = "label3";
             label3.Size = new Size(818, 53);
             label3.TabIndex = 4;
@@ -301,7 +306,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label2.ForeColor = Color.LightSeaGreen;
-            label2.Location = new Point(302, 137);
+            label2.Location = new Point(284, 137);
             label2.Name = "label2";
             label2.Size = new Size(134, 35);
             label2.TabIndex = 1;
@@ -312,7 +317,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label1.ForeColor = Color.LightSeaGreen;
-            label1.Location = new Point(32, 137);
+            label1.Location = new Point(27, 137);
             label1.Name = "label1";
             label1.Size = new Size(122, 35);
             label1.TabIndex = 0;
@@ -363,26 +368,31 @@
             listBox7.Location = new Point(705, 88);
             listBox7.Name = "listBox7";
             listBox7.SelectionMode = SelectionMode.None;
-            listBox7.Size = new Size(154, 249);
+            listBox7.Size = new Size(179, 249);
             listBox7.TabIndex = 22;
             // 
             // label26
             // 
             label26.AutoSize = true;
             label26.BackColor = Color.Gold;
-            label26.Location = new Point(716, 38);
+            label26.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label26.ForeColor = Color.DarkGreen;
+            label26.Location = new Point(705, 38);
             label26.Name = "label26";
-            label26.Size = new Size(235, 35);
+            label26.Size = new Size(251, 35);
             label26.TabIndex = 21;
             label26.Text = "Избрани продукти:";
+            label26.UseWaitCursor = true;
             // 
             // label25
             // 
             label25.AutoSize = true;
             label25.BackColor = Color.Gold;
+            label25.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label25.ForeColor = Color.DarkGreen;
             label25.Location = new Point(980, 38);
             label25.Name = "label25";
-            label25.Size = new Size(155, 35);
+            label25.Size = new Size(165, 35);
             label25.TabIndex = 20;
             label25.Text = "Количество:";
             // 
@@ -393,7 +403,7 @@
             listBox6.Location = new Point(457, 88);
             listBox6.Name = "listBox6";
             listBox6.SelectionMode = SelectionMode.MultiSimple;
-            listBox6.Size = new Size(171, 284);
+            listBox6.Size = new Size(171, 249);
             listBox6.TabIndex = 19;
             listBox6.SelectedIndexChanged += listBox6_SelectedIndexChanged;
             // 
@@ -403,7 +413,7 @@
             label10.BackColor = Color.Gold;
             label10.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label10.ForeColor = Color.DarkGreen;
-            label10.Location = new Point(466, 379);
+            label10.Location = new Point(457, 375);
             label10.Name = "label10";
             label10.Size = new Size(171, 35);
             label10.TabIndex = 18;
@@ -505,9 +515,9 @@
             // 
             // richTextBox2
             // 
-            richTextBox2.Location = new Point(466, 440);
+            richTextBox2.Location = new Point(457, 418);
             richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(575, 261);
+            richTextBox2.Size = new Size(678, 246);
             richTextBox2.TabIndex = 8;
             richTextBox2.Text = "";
             // 
@@ -590,7 +600,7 @@
             label23.BackColor = Color.SteelBlue;
             label23.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label23.ForeColor = Color.Orange;
-            label23.Location = new Point(48, 327);
+            label23.Location = new Point(25, 336);
             label23.Name = "label23";
             label23.Size = new Size(233, 35);
             label23.TabIndex = 36;
@@ -598,19 +608,20 @@
             // 
             // richTextBox3
             // 
-            richTextBox3.Location = new Point(576, 398);
+            richTextBox3.Location = new Point(585, 384);
             richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(174, 228);
+            richTextBox3.Size = new Size(174, 249);
             richTextBox3.TabIndex = 35;
             richTextBox3.Text = "";
+            richTextBox3.TextChanged += richTextBox3_TextChanged;
             // 
             // listBox9
             // 
             listBox9.FormattingEnabled = true;
             listBox9.ItemHeight = 35;
-            listBox9.Location = new Point(297, 406);
+            listBox9.Location = new Point(297, 384);
             listBox9.Name = "listBox9";
-            listBox9.Size = new Size(148, 214);
+            listBox9.Size = new Size(183, 249);
             listBox9.TabIndex = 34;
             listBox9.SelectedIndexChanged += listBox9_SelectedIndexChanged;
             // 
@@ -618,9 +629,9 @@
             // 
             listBox8.FormattingEnabled = true;
             listBox8.ItemHeight = 35;
-            listBox8.Location = new Point(48, 384);
+            listBox8.Location = new Point(25, 384);
             listBox8.Name = "listBox8";
-            listBox8.Size = new Size(135, 249);
+            listBox8.Size = new Size(158, 249);
             listBox8.TabIndex = 33;
             listBox8.SelectedIndexChanged += listBox8_SelectedIndexChanged;
             // 
@@ -664,7 +675,7 @@
             label19.BackColor = Color.SteelBlue;
             label19.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label19.ForeColor = Color.Orange;
-            label19.Location = new Point(346, 33);
+            label19.Location = new Point(346, 27);
             label19.Name = "label19";
             label19.Size = new Size(320, 35);
             label19.TabIndex = 28;
