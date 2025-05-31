@@ -198,11 +198,11 @@ namespace MagicInPlateConApp
                     return;
                 }
 
-                Console.Write("Нова трудност (Лесно/Средно/Трудно): ");
-                string newDifficulty = Console.ReadLine();
+            string newDifficulty;
             while (true)
             {
-
+                Console.Write("Нова трудност (Лесно/Средно/Трудно): ");
+                newDifficulty = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(newDifficulty))
                 {
                     Console.WriteLine(" Трудността не може да е празна.");
@@ -211,10 +211,11 @@ namespace MagicInPlateConApp
                 break;
             }
 
-                Console.Write("Категория (Предястие/Основно/Десерт):  ");
-                string newCategory = Console.ReadLine();
+            string newCategory;
             while (true)
             {
+                Console.Write("Категория (Предястие/Основно/Десерт):  ");
+                newCategory = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(newCategory))
                 {
                     Console.WriteLine(" Категорията не може да е празна.");
@@ -222,10 +223,12 @@ namespace MagicInPlateConApp
                 }
                 break;
             }
-                Console.Write("Нови инструкции: ");
-                string newInstructions = Console.ReadLine();
+                
+            string newInstructions;
             while (true)
             {
+                Console.Write("Нови инструкции: ");
+                newInstructions = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(newInstructions))
                 {
                     Console.WriteLine(" Инструкциите не могат да са празни.");
