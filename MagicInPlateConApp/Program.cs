@@ -310,19 +310,34 @@ namespace MagicInPlateConApp
 
             Console.ForegroundColor = ConsoleColor.Yellow;
  
-                Console.Write("Въведете име на нов продукт: ");
-                string name = Console.ReadLine();
+                
+            string name;
             while (true)
             {
+                Console.Write("Въведете име на нов продукт: ");
+                name = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(name))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(" Невалидно име на продукт! Моля въведете правилно име.");
                     continue;
                 }
+                if (name.Length < 2)
+                {
+                    Console.WriteLine("Името на рецептата трябва да съдържа поне 2 букви.");
+                    continue;
+                }
+                if (!IsBulgarianText(name))
+                {
+                    Console.WriteLine("Описанието съдържа английски букви. Използвайте български.");
+                    continue;
+                }
+                break;
+            }
 
-                var existingIngredients = formView.GetIngredientNames();
-
+             var existingIngredients = formView.GetIngredientNames();
+            while (true)
+            {
                 if (existingIngredients.Contains(name, StringComparer.OrdinalIgnoreCase))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -331,6 +346,8 @@ namespace MagicInPlateConApp
                 }
                 break;
             }
+               
+            
                 try
                 {
                     formView.AddIngredient(name);
