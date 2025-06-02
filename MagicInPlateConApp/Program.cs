@@ -52,7 +52,8 @@ namespace MagicInPlateConApp
                         DeleteRecipe(formView);
                         break;
                     case "0":
-                        SayGoodbye();
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("До скоро!");
                         return;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -693,29 +694,6 @@ namespace MagicInPlateConApp
                     return false;
             }
             return true;
-        }
-        static void SayGoodbye()
-        {
-            Console.Clear();
-
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("*******************************");
-            Console.WriteLine("*                             *");
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("*        ДО СКОРО!            *");
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("*       THANK YOU FOR         *");
-            Console.WriteLine("*         USING THE APP       *");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("*                             *");
-            Console.WriteLine("*******************************");
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("\n       Bye bye! \n");
-
-            Console.ResetColor();
-            System.Threading.Thread.Sleep(2500); 
-            Console.Clear();
         }
 
         private static void SayGoodbyeAndReturn()
