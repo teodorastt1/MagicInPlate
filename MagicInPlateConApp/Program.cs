@@ -145,10 +145,12 @@ namespace MagicInPlateConApp
                 }
  
                 int recipeId = recipeIds[index - 1];
-                Console.Write("Ново име: ");
-                string newName = Console.ReadLine();
+
+            string newName;
             while (true)
             {
+                Console.Write("Ново име: ");
+                newName = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(newName))
                 {
                     Console.WriteLine(" Името не може да е празно.");
@@ -164,14 +166,21 @@ namespace MagicInPlateConApp
                     Console.WriteLine("Описанието съдържа английски букви. Използвайте български.");
                     continue;
                 }
+                if (formView.RecipeExists(newName))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Тази рецепта вече съществува. Моля, въведете друго име.");
+                    continue;
+                }
                 break;
             }
-                
 
-                Console.Write("Ново описание: ");
-                string newDescription = Console.ReadLine();
+
+            string newDescription;
             while (true)
             {
+                Console.Write("Ново описание: ");
+                newDescription = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(newDescription))
                 {
                     Console.WriteLine(" Описанието не може да е празно.");
@@ -198,32 +207,48 @@ namespace MagicInPlateConApp
                     return;
                 }
 
-            string newDifficulty;
+            string newdifficulty;
             while (true)
             {
-                Console.Write("Нова трудност (Лесно/Средно/Трудно): ");
-                newDifficulty = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(newDifficulty))
+                Console.Write("Трудност (Лесно/Средно/Трудно): ");
+                newdifficulty = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(newdifficulty))
                 {
-                    Console.WriteLine(" Трудността не може да е празна.");
+                    Console.WriteLine("Моля, въведете трудност.");
+                    continue;
+                }
+
+                var diffLower = newdifficulty.ToLower();
+                if (diffLower != "лесно" && diffLower != "средно" && diffLower != "трудно")
+                {
+                    Console.WriteLine("Невалидна стойност за трудност. Допустими: Лесно, Средно, Трудно.");
                     continue;
                 }
                 break;
             }
 
-            string newCategory;
+            string newcategory;
             while (true)
             {
-                Console.Write("Категория (Предястие/Основно/Десерт):  ");
-                newCategory = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(newCategory))
+                Console.Write("Категория (Предястие/Основно/Десерт): ");
+                newcategory = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(newcategory))
                 {
-                    Console.WriteLine(" Категорията не може да е празна.");
+                    Console.WriteLine("Моля, въведете категория.");
+                    continue;
+                }
+
+                var catLower = newcategory.ToLower();
+                if (catLower != "предястие" && catLower != "основно" && catLower != "десерт")
+                {
+                    Console.WriteLine("Невалидна категория. Допустими: Предястие, Основно, Десерт.");
                     continue;
                 }
                 break;
             }
-                
+
             string newInstructions;
             while (true)
             {
@@ -284,7 +309,7 @@ namespace MagicInPlateConApp
 
                 try
                 {
-                    formView.UpdateRecipe(recipeId, newName, newDescription, newPrepTime, newDifficulty, newInstructions, newCategory, ingredients, quantities);
+                    formView.UpdateRecipe(recipeId, newName, newDescription, newPrepTime, newdifficulty, newInstructions, newcategory, ingredients, quantities);
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine(" Рецептата е успешно редактирана.");
 
@@ -390,6 +415,12 @@ namespace MagicInPlateConApp
                 if (!IsBulgarianText(name))
                 {
                     Console.WriteLine("Името не трябва да съдържа английски букви.");
+                    continue;
+                }
+                if (formView.RecipeExists(name)) 
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Тази рецепта вече съществува. Моля, въведете друго име.");
                     continue;
                 }
                 break;
@@ -612,7 +643,7 @@ namespace MagicInPlateConApp
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("\nВашият избор: ");
-
+        
             if (!int.TryParse(Console.ReadLine(), out int choice) || choice < 1 || choice > recipeNames.Count)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -650,6 +681,7 @@ namespace MagicInPlateConApp
 
             SayGoodbyeAndReturn();
         }
+
 
         private static bool IsBulgarianText(string input)
         {

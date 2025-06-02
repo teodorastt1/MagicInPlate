@@ -218,7 +218,7 @@
             // 
             // richTextBox6
             // 
-            richTextBox6.Location = new Point(887, 215);
+            richTextBox6.Location = new Point(928, 216);
             richTextBox6.Margin = new Padding(3, 4, 3, 4);
             richTextBox6.Name = "richTextBox6";
             richTextBox6.Size = new Size(278, 425);
@@ -230,7 +230,7 @@
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label22.ForeColor = Color.LightSeaGreen;
-            label22.Location = new Point(887, 137);
+            label22.Location = new Point(928, 137);
             label22.Name = "label22";
             label22.Size = new Size(280, 35);
             label22.TabIndex = 8;
@@ -238,7 +238,7 @@
             // 
             // richTextBox5
             // 
-            richTextBox5.Location = new Point(575, 216);
+            richTextBox5.Location = new Point(608, 215);
             richTextBox5.Margin = new Padding(3, 4, 3, 4);
             richTextBox5.Name = "richTextBox5";
             richTextBox5.Size = new Size(270, 425);
@@ -250,7 +250,7 @@
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label21.ForeColor = Color.LightSeaGreen;
-            label21.Location = new Point(575, 137);
+            label21.Location = new Point(608, 137);
             label21.Name = "label21";
             label21.Size = new Size(171, 35);
             label21.TabIndex = 6;
@@ -285,7 +285,7 @@
             // 
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 35;
-            listBox2.Location = new Point(284, 216);
+            listBox2.Location = new Point(310, 215);
             listBox2.Name = "listBox2";
             listBox2.SelectionMode = SelectionMode.None;
             listBox2.Size = new Size(247, 424);
@@ -295,9 +295,9 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 35;
-            listBox1.Location = new Point(27, 216);
+            listBox1.Location = new Point(27, 215);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(209, 424);
+            listBox1.Size = new Size(233, 424);
             listBox1.TabIndex = 2;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
@@ -306,7 +306,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label2.ForeColor = Color.LightSeaGreen;
-            label2.Location = new Point(284, 137);
+            label2.Location = new Point(310, 137);
             label2.Name = "label2";
             label2.Size = new Size(134, 35);
             label2.TabIndex = 1;
@@ -621,7 +621,7 @@
             listBox9.ItemHeight = 35;
             listBox9.Location = new Point(297, 384);
             listBox9.Name = "listBox9";
-            listBox9.Size = new Size(183, 249);
+            listBox9.Size = new Size(219, 249);
             listBox9.TabIndex = 34;
             listBox9.SelectedIndexChanged += listBox9_SelectedIndexChanged;
             // 
@@ -631,7 +631,8 @@
             listBox8.ItemHeight = 35;
             listBox8.Location = new Point(25, 384);
             listBox8.Name = "listBox8";
-            listBox8.Size = new Size(158, 249);
+            listBox8.SelectionMode = SelectionMode.MultiSimple;
+            listBox8.Size = new Size(200, 249);
             listBox8.TabIndex = 33;
             listBox8.SelectedIndexChanged += listBox8_SelectedIndexChanged;
             // 
@@ -845,9 +846,9 @@
             listBox3.BackColor = Color.Orange;
             listBox3.FormattingEnabled = true;
             listBox3.ItemHeight = 35;
-            listBox3.Location = new Point(643, 163);
+            listBox3.Location = new Point(568, 150);
             listBox3.Name = "listBox3";
-            listBox3.Size = new Size(334, 319);
+            listBox3.Size = new Size(409, 319);
             listBox3.TabIndex = 1;
             // 
             // label11
@@ -856,7 +857,7 @@
             label11.BackColor = Color.Orange;
             label11.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(350, 163);
+            label11.Location = new Point(271, 150);
             label11.Name = "label11";
             label11.Size = new Size(244, 35);
             label11.TabIndex = 0;

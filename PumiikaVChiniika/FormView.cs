@@ -205,5 +205,10 @@ namespace PumiikaVChiniika
                 .Select(i => i.Name)
                 .ToList();
         }
+        public bool RecipeExists(string name)
+        {
+            return context.Recipes
+                          .Any(r => r.Name.Trim().ToLower() == name.Trim().ToLower());
+        }
     }
 }
