@@ -52,8 +52,7 @@ namespace MagicInPlateConApp
                         DeleteRecipe(formView);
                         break;
                     case "0":
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("До скоро!");
+                        SayGoodbye();
                         return;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -61,9 +60,9 @@ namespace MagicInPlateConApp
                         break;
                 }
 
-                Console.WriteLine("\nНатиснете Enter за продължение...");
-                Console.ReadLine();
-                Console.Clear();
+               Console.WriteLine("\nНатиснете Enter за продължение...");
+               Console.ReadLine();
+               Console.Clear();
             }
         }
 
@@ -695,11 +694,34 @@ namespace MagicInPlateConApp
             }
             return true;
         }
+        static void SayGoodbye()
+        {
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("*******************************");
+            Console.WriteLine("*                             *");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("*        ДО СКОРО!            *");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("*       THANK YOU FOR         *");
+            Console.WriteLine("*         USING THE APP       *");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("*                             *");
+            Console.WriteLine("*******************************");
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\n       Bye bye! \n");
+
+            Console.ResetColor();
+            System.Threading.Thread.Sleep(2500); 
+            Console.Clear();
+        }
+
         private static void SayGoodbyeAndReturn()
         {
             Console.Clear();
 
-            // Set up colors and styles for the goodbye message
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("╔══════════════════════════════════════════╗");
             Console.WriteLine("║                                          ║");
