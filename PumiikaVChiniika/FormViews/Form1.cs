@@ -1,4 +1,5 @@
 using PumiikaVChiniika.Models;
+using PumiikaVChiniika.Services;
 using System.Windows.Forms;
 
 
@@ -9,7 +10,7 @@ namespace PumiikaVChiniika
         public Form1()
         {
             InitializeComponent();
-            FormView formView = new FormView();
+            RecipeServices formView = new RecipeServices();
             List<string> recipeNames = formView.GetRecipeNames();
             LoadDifficultiesIntoCheckBoxesForAddingAndChange();
             LoadCategoriesIntoCheckBOxesForAddingAndChange();
@@ -58,7 +59,7 @@ namespace PumiikaVChiniika
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FormView formView = new FormView();
+            RecipeServices formView = new RecipeServices();
             List<string> ingredients, quantities;
             string selectedRecipeInstructions, extraInfo;
             GettingInfoAboutRecipesForPageOne(formView, out ingredients, out quantities, out selectedRecipeInstructions, out extraInfo);
@@ -91,7 +92,7 @@ namespace PumiikaVChiniika
 
         }
 
-        private void GettingInfoAboutRecipesForPageOne(FormView formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string extraInfo)
+        private void GettingInfoAboutRecipesForPageOne(RecipeServices formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string extraInfo)
         {
             List<string> recipeInstructions = formView.GetRecipeInstructions();
             List<int> recipeId = formView.GetRecipeId();
@@ -109,7 +110,7 @@ namespace PumiikaVChiniika
                 " Минути\n" + recipeDifficulty[selectedIndex] +
                 "\n" + recipeCategory[selectedIndex];
         }
-        private void GettingInfoAboutRecipesForPageFourChange(FormView formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string description, out int recipeCookingTime, out string recipeDifficulty, out string recipeCategory)
+        private void GettingInfoAboutRecipesForPageFourChange(RecipeServices formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string description, out int recipeCookingTime, out string recipeDifficulty, out string recipeCategory)
         {
             List<string> recipeInstructions = formView.GetRecipeInstructions();
             List<int> recipeId = formView.GetRecipeId();
@@ -160,7 +161,7 @@ namespace PumiikaVChiniika
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormView formView = new FormView();
+            RecipeServices formView = new RecipeServices();
 
             int selectedIndex = listBox3.SelectedIndex;
 
@@ -183,7 +184,7 @@ namespace PumiikaVChiniika
             }
         }
 
-        private void UIRefresh(FormView formView)
+        private void UIRefresh(RecipeServices formView)
         {
             listBox1.Items.Clear();
             listBox3.Items.Clear();
@@ -204,7 +205,7 @@ namespace PumiikaVChiniika
         {
             if (listBox4.SelectedIndex < 0) return;
 
-            FormView formView = new FormView();
+            RecipeServices formView = new RecipeServices();
             List<string> ingredients;
             List<string> quantities;
             string selectedRecipeInstructions;
@@ -242,7 +243,7 @@ namespace PumiikaVChiniika
             }
         }
 
-        private void LoadIngredientsIntoListBox5(FormView formView)
+        private void LoadIngredientsIntoListBox5(RecipeServices formView)
         {
             listBox5.Items.Clear();
             List<string> ingredients = formView.GetAllIngredients();
@@ -251,7 +252,7 @@ namespace PumiikaVChiniika
                 listBox5.Items.Add(ingredient);
             }
         }
-        private void LoadIngredientsIntoListBox6(FormView formView)
+        private void LoadIngredientsIntoListBox6(RecipeServices formView)
         {
             listBox6.Items.Clear();
             List<string> ingredients = formView.GetAllIngredients();
@@ -261,7 +262,7 @@ namespace PumiikaVChiniika
             }
         }
 
-        private void LoadIngredientsIntoListBox8(FormView formView)
+        private void LoadIngredientsIntoListBox8(RecipeServices formView)
         {
             listBox8.Items.Clear();
             List<string> ingredients = formView.GetAllIngredients();
@@ -277,7 +278,7 @@ namespace PumiikaVChiniika
             if (listBox4.SelectedIndex >= 0)
             {
                 int selectedIndex = listBox4.SelectedIndex;
-                FormView formView = new FormView();
+                RecipeServices formView = new RecipeServices();
                 List<int> recipeIds = formView.GetRecipeId();
                 int selectedRecipeId = recipeIds[selectedIndex];
 
@@ -312,7 +313,7 @@ namespace PumiikaVChiniika
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FormView formView = new FormView();
+            RecipeServices formView = new RecipeServices();
             string newIngredientName = textBox7.Text.Trim();
 
             if (!string.IsNullOrEmpty(newIngredientName))
@@ -357,7 +358,7 @@ namespace PumiikaVChiniika
                 return;
             }
 
-            FormView formView = new FormView();
+            RecipeServices formView = new RecipeServices();
             formView.AddRecipe(name, description, prepTime, difficulty, instructions, category, selectedIngredients, quantities);
 
             MessageBox.Show("Recipe added successfully!");

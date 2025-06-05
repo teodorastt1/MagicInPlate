@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PumiikaVChiniika
+namespace PumiikaVChiniika.Services
 {
-    public class FormView
+    public class RecipeServices
     {
 
         private readonly MagicInPlateContext context;
 
-        public FormView()
+        public RecipeServices()
         {
             context = new MagicInPlateContext();
         }
