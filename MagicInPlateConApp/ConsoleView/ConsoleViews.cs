@@ -11,6 +11,7 @@ namespace MagicInPlateConApp.ConsoleView
     {
         public void ShowMenu()
         {
+            
             RecipeServices formView = new RecipeServices();
             Console.Title = " Magic In Plate ";
             Console.ForegroundColor = ConsoleColor.Cyan;

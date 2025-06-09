@@ -2,11 +2,16 @@ using PumiikaVChiniika.Models;
 using PumiikaVChiniika.Services;
 using System.Windows.Forms;
 
-
 namespace PumiikaVChiniika
 {
+    /// <summary>
+    /// Основната форма на приложението, която управлява рецептите и свързаните с тях действия.
+    /// </summary>
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Конструктор. Инициализира формата и зарежда данните в контролите.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -18,10 +23,11 @@ namespace PumiikaVChiniika
             LoadIngredientsIntoListBox5(formView);
             LoadIngredientsIntoListBox6(formView);
             LoadIngredientsIntoListBox8(formView);
-
-
         }
 
+        /// <summary>
+        /// Зарежда категориите в комбобоксите за добавяне и редакция на рецепти.
+        /// </summary>
         private void LoadCategoriesIntoCheckBOxesForAddingAndChange()
         {
             comboBox2.Items.Add("Предястие");
@@ -32,6 +38,9 @@ namespace PumiikaVChiniika
             comboBox3.Items.Add("Десерт");
         }
 
+        /// <summary>
+        /// Зарежда нивата на трудност в комбобоксите за добавяне и редакция на рецепти.
+        /// </summary>
         private void LoadDifficultiesIntoCheckBoxesForAddingAndChange()
         {
             comboBox1.Items.Add("Лесно");
@@ -42,21 +51,14 @@ namespace PumiikaVChiniika
             comboBox4.Items.Add("Трудно");
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
+        private void tabPage1_Click(object sender, EventArgs e) { }
+        private void label3_Click(object sender, EventArgs e) { }
+        private void pictureBox1_Click(object sender, EventArgs e) { }
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Събитие при избор на рецепта в listBox1 (първи таб).
+        /// Зарежда информацията за избраната рецепта.
+        /// </summary>
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             RecipeServices formView = new RecipeServices();
@@ -69,6 +71,9 @@ namespace PumiikaVChiniika
             DisplayingIngredientsAndQuantitiesTogether(ingredients, quantities);
         }
 
+        /// <summary>
+        /// Показва съставките и количествата за избрана рецепта в listBox2.
+        /// </summary>
         private void DisplayingIngredientsAndQuantitiesTogether(List<string> ingredients, List<string> quantities)
         {
             int i = 0;
@@ -77,21 +82,25 @@ namespace PumiikaVChiniika
                 if (i < quantities.Count)
                 {
                     listBox2.Items.Add(ingredient + " - " + quantities[i]);
-
                 }
                 i++;
             }
         }
+
+        /// <summary>
+        /// Показва инструкциите и допълнителната информация за рецепта.
+        /// </summary>
         private void WritingInstructionsAndExtraInfoInFirstTab(string selectedRecipeInstructions, string extraInfo)
         {
             richTextBox5.Text = selectedRecipeInstructions;
             richTextBox6.Text = extraInfo;
         }
-        private void WritingInfoInForthTab()///
-        {
 
-        }
+        private void WritingInfoInForthTab() { }
 
+        /// <summary>
+        /// Взема данните за избраната рецепта за първия таб (съставки, количества, инструкции и др.).
+        /// </summary>
         private void GettingInfoAboutRecipesForPageOne(RecipeServices formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string extraInfo)
         {
             List<string> recipeInstructions = formView.GetRecipeInstructions();
@@ -110,6 +119,10 @@ namespace PumiikaVChiniika
                 " Минути\n" + recipeDifficulty[selectedIndex] +
                 "\n" + recipeCategory[selectedIndex];
         }
+
+        /// <summary>
+        /// Взема пълните данни за избраната рецепта за четвъртия таб.
+        /// </summary>
         private void GettingInfoAboutRecipesForPageFourChange(RecipeServices formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string description, out int recipeCookingTime, out string recipeDifficulty, out string recipeCategory)
         {
             List<string> recipeInstructions = formView.GetRecipeInstructions();
@@ -127,11 +140,11 @@ namespace PumiikaVChiniika
             recipeCookingTime = recipePrepTime[selectedIndex];
             recipeDifficulty = recipeDifficulties[selectedIndex];
             recipeCategory = recipeCategories[selectedIndex];
-
-
         }
 
-
+        /// <summary>
+        /// Зарежда имената на рецептите в съответните списъци (listBox1, listBox3, listBox4).
+        /// </summary>
         private void RecievingRecipeNamesInAllListBoxes(List<string> recipeNames)
         {
             foreach (string name in recipeNames)
@@ -141,12 +154,20 @@ namespace PumiikaVChiniika
                 listBox3.Items.Add(name);
             }
         }
+
+        /// <summary>
+        /// Изчиства съдържанието на контроли при смяна на избраната рецепта в първия таб.
+        /// </summary>
         private void ClearAfterAChangeInFirstTab()
         {
             richTextBox5.Clear();
             listBox2.Items.Clear();
             richTextBox6.Clear();
         }
+
+        /// <summary>
+        /// Изчиства съдържанието на контролите в четвъртия таб.
+        /// </summary>
         private void ClearAfterAChangeInForthTab()
         {
             richTextBox4.Clear();
@@ -156,20 +177,20 @@ namespace PumiikaVChiniika
             textBox5.Clear();
             textBox4.Clear();
             textBox6.Clear();
-
         }
 
+        /// <summary>
+        /// Събитие при натискане на бутон за изтриване на рецепта.
+        /// </summary>
         private void button2_Click(object sender, EventArgs e)
         {
             RecipeServices formView = new RecipeServices();
-
             int selectedIndex = listBox3.SelectedIndex;
 
             if (selectedIndex >= 0)
             {
                 List<int> recipeIds = formView.GetRecipeId();
                 int selectedRecipeId = recipeIds[selectedIndex];
-
 
                 var confirmResult = MessageBox.Show("Are you sure you want to delete this recipe?", "Confirm Delete", MessageBoxButtons.YesNo);
                 if (confirmResult == DialogResult.Yes)
@@ -184,6 +205,9 @@ namespace PumiikaVChiniika
             }
         }
 
+        /// <summary>
+        /// Актуализира интерфейса, след като е направена промяна в рецептите.
+        /// </summary>
         private void UIRefresh(RecipeServices formView)
         {
             listBox1.Items.Clear();
@@ -196,11 +220,14 @@ namespace PumiikaVChiniika
                 listBox3.Items.Add(name);
                 listBox4.Items.Add(name);
             }
-
             richTextBox5.Clear();
             listBox2.Items.Clear();
         }
 
+        /// <summary>
+        /// Събитие при избор на рецепта в listBox4 (четвърти таб).
+        /// Зарежда информацията за рецептата и продуктите.
+        /// </summary>
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox4.SelectedIndex < 0) return;
@@ -230,10 +257,7 @@ namespace PumiikaVChiniika
                 listBox9.Items.Add(ingredient);
             }
 
-            for (int i = 0; i < quantities.Count; i++)
-            {
-                richTextBox3.Text = string.Join(Environment.NewLine, quantities);
-            }
+            richTextBox3.Text = string.Join(Environment.NewLine, quantities);
 
             List<string> allIngredients = formView.GetAllIngredients();
             listBox8.Items.Clear();
@@ -243,6 +267,9 @@ namespace PumiikaVChiniika
             }
         }
 
+        /// <summary>
+        /// Зарежда всички продукти в listBox5.
+        /// </summary>
         private void LoadIngredientsIntoListBox5(RecipeServices formView)
         {
             listBox5.Items.Clear();
@@ -252,6 +279,10 @@ namespace PumiikaVChiniika
                 listBox5.Items.Add(ingredient);
             }
         }
+
+        /// <summary>
+        /// Зарежда всички продукти в listBox6.
+        /// </summary>
         private void LoadIngredientsIntoListBox6(RecipeServices formView)
         {
             listBox6.Items.Clear();
@@ -262,6 +293,9 @@ namespace PumiikaVChiniika
             }
         }
 
+        /// <summary>
+        /// Зарежда всички продукти в listBox8.
+        /// </summary>
         private void LoadIngredientsIntoListBox8(RecipeServices formView)
         {
             listBox8.Items.Clear();
@@ -272,7 +306,9 @@ namespace PumiikaVChiniika
             }
         }
 
-
+        /// <summary>
+        /// Събитие при натискане на бутон за обновяване на избрана рецепта.
+        /// </summary>
         private void button3_Click(object sender, EventArgs e)
         {
             if (listBox4.SelectedIndex >= 0)
@@ -311,6 +347,9 @@ namespace PumiikaVChiniika
             }
         }
 
+        /// <summary>
+        /// Събитие при натискане на бутон за добавяне на нов продукт.
+        /// </summary>
         private void button4_Click(object sender, EventArgs e)
         {
             RecipeServices formView = new RecipeServices();
@@ -328,8 +367,10 @@ namespace PumiikaVChiniika
             }
         }
 
-
-
+        /// <summary>
+        /// Събитие при избор на продукти в listBox6 (при добавяне на рецепта).
+        /// Избраните продукти се копират в listBox7.
+        /// </summary>
         private void listBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedProducts = listBox6.SelectedItems;
@@ -340,6 +381,9 @@ namespace PumiikaVChiniika
             }
         }
 
+        /// <summary>
+        /// Събитие при натискане на бутон за добавяне на нова рецепта.
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             string name = textBox1.Text;
@@ -373,28 +417,30 @@ namespace PumiikaVChiniika
             textBox3.Clear();
             LoadCategoriesIntoCheckBOxesForAddingAndChange();
             LoadDifficultiesIntoCheckBoxesForAddingAndChange();
-
-
-
         }
 
+        /// <summary>
+        /// Събитие при избор на продукти в listBox8 (в раздела за редактиране).
+        /// Избраните продукти се копират в listBox9.
+        /// </summary>
         private void listBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             var selectedProducts = listBox8.SelectedItems;
             listBox9.Items.Clear();
             foreach (var product in selectedProducts)
             {
                 listBox9.Items.Add(product);
             }
-
         }
 
-        private void listBox9_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// Събитие при промяна на избора в listBox9 (в момента не е реализирано).
+        /// </summary>
+        private void listBox9_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        }
-
+        /// <summary>
+        /// Вътрешен клас, представляващ рецепта с основните й свойства.
+        /// </summary>
         public class Recipe
         {
             public string Name { get; set; }
@@ -409,14 +455,7 @@ namespace PumiikaVChiniika
             }
         }
 
-        private void richTextBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void richTextBox4_TextChanged(object sender, EventArgs e) { }
+        private void richTextBox3_TextChanged(object sender, EventArgs e) { }
     }
 }
