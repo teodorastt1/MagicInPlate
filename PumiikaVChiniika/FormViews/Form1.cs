@@ -1,16 +1,16 @@
-using PumiikaVChiniika.Models;
+п»їusing PumiikaVChiniika.Models;
 using PumiikaVChiniika.Services;
 using System.Windows.Forms;
 
 namespace PumiikaVChiniika
 {
     /// <summary>
-    /// Основната форма на приложението, която управлява рецептите и свързаните с тях действия.
+    /// ГЋГ±Г­Г®ГўГ­Г ГІГ  ГґГ®Г°Г¬Г  Г­Г  ГЇГ°ГЁГ«Г®Г¦ГҐГ­ГЁГҐГІГ®, ГЄГ®ГїГІГ® ГіГЇГ°Г ГўГ«ГїГўГ  Г°ГҐГ¶ГҐГЇГІГЁГІГҐ ГЁ Г±ГўГєГ°Г§Г Г­ГЁГІГҐ Г± ГІГїГµ Г¤ГҐГ©Г±ГІГўГЁГї.
     /// </summary>
     public partial class Form1 : Form
     {
         /// <summary>
-        /// Конструктор. Инициализира формата и зарежда данните в контролите.
+        /// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г°. Г€Г­ГЁГ¶ГЁГ Г«ГЁГ§ГЁГ°Г  ГґГ®Г°Г¬Г ГІГ  ГЁ Г§Г Г°ГҐГ¦Г¤Г  Г¤Г Г­Г­ГЁГІГҐ Гў ГЄГ®Г­ГІГ°Г®Г«ГЁГІГҐ.
         /// </summary>
         public Form1()
         {
@@ -26,29 +26,29 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Зарежда категориите в комбобоксите за добавяне и редакция на рецепти.
+        /// Г‡Г Г°ГҐГ¦Г¤Г  ГЄГ ГІГҐГЈГ®Г°ГЁГЁГІГҐ Гў ГЄГ®Г¬ГЎГ®ГЎГ®ГЄГ±ГЁГІГҐ Г§Г  Г¤Г®ГЎГ ГўГїГ­ГҐ ГЁ Г°ГҐГ¤Г ГЄГ¶ГЁГї Г­Г  Г°ГҐГ¶ГҐГЇГІГЁ.
         /// </summary>
         private void LoadCategoriesIntoCheckBOxesForAddingAndChange()
         {
-            comboBox2.Items.Add("Предястие");
-            comboBox2.Items.Add("Основно");
-            comboBox2.Items.Add("Десерт");
-            comboBox3.Items.Add("Предястие");
-            comboBox3.Items.Add("Основно");
-            comboBox3.Items.Add("Десерт");
+            comboBox2.Items.Add("ГЏГ°ГҐГ¤ГїГ±ГІГЁГҐ");
+            comboBox2.Items.Add("ГЋГ±Г­Г®ГўГ­Г®");
+            comboBox2.Items.Add("Г„ГҐГ±ГҐГ°ГІ");
+            comboBox3.Items.Add("ГЏГ°ГҐГ¤ГїГ±ГІГЁГҐ");
+            comboBox3.Items.Add("ГЋГ±Г­Г®ГўГ­Г®");
+            comboBox3.Items.Add("Г„ГҐГ±ГҐГ°ГІ");
         }
 
         /// <summary>
-        /// Зарежда нивата на трудност в комбобоксите за добавяне и редакция на рецепти.
+        /// Г‡Г Г°ГҐГ¦Г¤Г  Г­ГЁГўГ ГІГ  Г­Г  ГІГ°ГіГ¤Г­Г®Г±ГІ Гў ГЄГ®Г¬ГЎГ®ГЎГ®ГЄГ±ГЁГІГҐ Г§Г  Г¤Г®ГЎГ ГўГїГ­ГҐ ГЁ Г°ГҐГ¤Г ГЄГ¶ГЁГї Г­Г  Г°ГҐГ¶ГҐГЇГІГЁ.
         /// </summary>
         private void LoadDifficultiesIntoCheckBoxesForAddingAndChange()
         {
-            comboBox1.Items.Add("Лесно");
-            comboBox1.Items.Add("Средно");
-            comboBox1.Items.Add("Трудно");
-            comboBox4.Items.Add("Лесно");
-            comboBox4.Items.Add("Средно");
-            comboBox4.Items.Add("Трудно");
+            comboBox1.Items.Add("Г‹ГҐГ±Г­Г®");
+            comboBox1.Items.Add("Г‘Г°ГҐГ¤Г­Г®");
+            comboBox1.Items.Add("Г’Г°ГіГ¤Г­Г®");
+            comboBox4.Items.Add("Г‹ГҐГ±Г­Г®");
+            comboBox4.Items.Add("Г‘Г°ГҐГ¤Г­Г®");
+            comboBox4.Items.Add("Г’Г°ГіГ¤Г­Г®");
         }
 
         private void tabPage1_Click(object sender, EventArgs e) { }
@@ -56,8 +56,8 @@ namespace PumiikaVChiniika
         private void pictureBox1_Click(object sender, EventArgs e) { }
 
         /// <summary>
-        /// Събитие при избор на рецепта в listBox1 (първи таб).
-        /// Зарежда информацията за избраната рецепта.
+        /// Г‘ГєГЎГЁГІГЁГҐ ГЇГ°ГЁ ГЁГ§ГЎГ®Г° Г­Г  Г°ГҐГ¶ГҐГЇГІГ  Гў listBox1 (ГЇГєГ°ГўГЁ ГІГ ГЎ).
+        /// Г‡Г Г°ГҐГ¦Г¤Г  ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГїГІГ  Г§Г  ГЁГ§ГЎГ°Г Г­Г ГІГ  Г°ГҐГ¶ГҐГЇГІГ .
         /// </summary>
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -72,7 +72,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Показва съставките и количествата за избрана рецепта в listBox2.
+        /// ГЏГ®ГЄГ Г§ГўГ  Г±ГєГ±ГІГ ГўГЄГЁГІГҐ ГЁ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ ГІГ  Г§Г  ГЁГ§ГЎГ°Г Г­Г  Г°ГҐГ¶ГҐГЇГІГ  Гў listBox2.
         /// </summary>
         private void DisplayingIngredientsAndQuantitiesTogether(List<string> ingredients, List<string> quantities)
         {
@@ -88,7 +88,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Показва инструкциите и допълнителната информация за рецепта.
+        /// ГЏГ®ГЄГ Г§ГўГ  ГЁГ­Г±ГІГ°ГіГЄГ¶ГЁГЁГІГҐ ГЁ Г¤Г®ГЇГєГ«Г­ГЁГІГҐГ«Г­Г ГІГ  ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГї Г§Г  Г°ГҐГ¶ГҐГЇГІГ .
         /// </summary>
         private void WritingInstructionsAndExtraInfoInFirstTab(string selectedRecipeInstructions, string extraInfo)
         {
@@ -99,7 +99,7 @@ namespace PumiikaVChiniika
         private void WritingInfoInForthTab() { }
 
         /// <summary>
-        /// Взема данните за избраната рецепта за първия таб (съставки, количества, инструкции и др.).
+        /// Г‚Г§ГҐГ¬Г  Г¤Г Г­Г­ГЁГІГҐ Г§Г  ГЁГ§ГЎГ°Г Г­Г ГІГ  Г°ГҐГ¶ГҐГЇГІГ  Г§Г  ГЇГєГ°ГўГЁГї ГІГ ГЎ (Г±ГєГ±ГІГ ГўГЄГЁ, ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ , ГЁГ­Г±ГІГ°ГіГЄГ¶ГЁГЁ ГЁ Г¤Г°.).
         /// </summary>
         private void GettingInfoAboutRecipesForPageOne(RecipeServices formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string extraInfo)
         {
@@ -116,12 +116,12 @@ namespace PumiikaVChiniika
             selectedRecipeInstructions = recipeInstructions[selectedIndex];
             extraInfo = recipeDescription[selectedIndex] +
                 "\n" + recipePrepTime[selectedIndex] +
-                " Минути\n" + recipeDifficulty[selectedIndex] +
+                " ГЊГЁГ­ГіГІГЁ\n" + recipeDifficulty[selectedIndex] +
                 "\n" + recipeCategory[selectedIndex];
         }
 
         /// <summary>
-        /// Взема пълните данни за избраната рецепта за четвъртия таб.
+        /// Г‚Г§ГҐГ¬Г  ГЇГєГ«Г­ГЁГІГҐ Г¤Г Г­Г­ГЁ Г§Г  ГЁГ§ГЎГ°Г Г­Г ГІГ  Г°ГҐГ¶ГҐГЇГІГ  Г§Г  Г·ГҐГІГўГєГ°ГІГЁГї ГІГ ГЎ.
         /// </summary>
         private void GettingInfoAboutRecipesForPageFourChange(RecipeServices formView, out List<string> ingredients, out List<string> quantities, out string selectedRecipeInstructions, out string description, out int recipeCookingTime, out string recipeDifficulty, out string recipeCategory)
         {
@@ -143,7 +143,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Зарежда имената на рецептите в съответните списъци (listBox1, listBox3, listBox4).
+        /// Г‡Г Г°ГҐГ¦Г¤Г  ГЁГ¬ГҐГ­Г ГІГ  Г­Г  Г°ГҐГ¶ГҐГЇГІГЁГІГҐ Гў Г±ГєГ®ГІГўГҐГІГ­ГЁГІГҐ Г±ГЇГЁГ±ГєГ¶ГЁ (listBox1, listBox3, listBox4).
         /// </summary>
         private void RecievingRecipeNamesInAllListBoxes(List<string> recipeNames)
         {
@@ -156,7 +156,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Изчиства съдържанието на контроли при смяна на избраната рецепта в първия таб.
+        /// Г€Г§Г·ГЁГ±ГІГўГ  Г±ГєГ¤ГєГ°Г¦Г Г­ГЁГҐГІГ® Г­Г  ГЄГ®Г­ГІГ°Г®Г«ГЁ ГЇГ°ГЁ Г±Г¬ГїГ­Г  Г­Г  ГЁГ§ГЎГ°Г Г­Г ГІГ  Г°ГҐГ¶ГҐГЇГІГ  Гў ГЇГєГ°ГўГЁГї ГІГ ГЎ.
         /// </summary>
         private void ClearAfterAChangeInFirstTab()
         {
@@ -166,7 +166,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Изчиства съдържанието на контролите в четвъртия таб.
+        /// Г€Г§Г·ГЁГ±ГІГўГ  Г±ГєГ¤ГєГ°Г¦Г Г­ГЁГҐГІГ® Г­Г  ГЄГ®Г­ГІГ°Г®Г«ГЁГІГҐ Гў Г·ГҐГІГўГєГ°ГІГЁГї ГІГ ГЎ.
         /// </summary>
         private void ClearAfterAChangeInForthTab()
         {
@@ -180,7 +180,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Събитие при натискане на бутон за изтриване на рецепта.
+        /// Г‘ГєГЎГЁГІГЁГҐ ГЇГ°ГЁ Г­Г ГІГЁГ±ГЄГ Г­ГҐ Г­Г  ГЎГіГІГ®Г­ Г§Г  ГЁГ§ГІГ°ГЁГўГ Г­ГҐ Г­Г  Г°ГҐГ¶ГҐГЇГІГ .
         /// </summary>
         private void button2_Click(object sender, EventArgs e)
         {
@@ -206,7 +206,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Актуализира интерфейса, след като е направена промяна в рецептите.
+        /// ГЂГЄГІГіГ Г«ГЁГ§ГЁГ°Г  ГЁГ­ГІГҐГ°ГґГҐГ©Г±Г , Г±Г«ГҐГ¤ ГЄГ ГІГ® ГҐ Г­Г ГЇГ°Г ГўГҐГ­Г  ГЇГ°Г®Г¬ГїГ­Г  Гў Г°ГҐГ¶ГҐГЇГІГЁГІГҐ.
         /// </summary>
         private void UIRefresh(RecipeServices formView)
         {
@@ -225,8 +225,8 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Събитие при избор на рецепта в listBox4 (четвърти таб).
-        /// Зарежда информацията за рецептата и продуктите.
+        /// Г‘ГєГЎГЁГІГЁГҐ ГЇГ°ГЁ ГЁГ§ГЎГ®Г° Г­Г  Г°ГҐГ¶ГҐГЇГІГ  Гў listBox4 (Г·ГҐГІГўГєГ°ГІГЁ ГІГ ГЎ).
+        /// Г‡Г Г°ГҐГ¦Г¤Г  ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГїГІГ  Г§Г  Г°ГҐГ¶ГҐГЇГІГ ГІГ  ГЁ ГЇГ°Г®Г¤ГіГЄГІГЁГІГҐ.
         /// </summary>
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -268,7 +268,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Зарежда всички продукти в listBox5.
+        /// Г‡Г Г°ГҐГ¦Г¤Г  ГўГ±ГЁГ·ГЄГЁ ГЇГ°Г®Г¤ГіГЄГІГЁ Гў listBox5.
         /// </summary>
         private void LoadIngredientsIntoListBox5(RecipeServices formView)
         {
@@ -281,7 +281,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Зарежда всички продукти в listBox6.
+        /// Г‡Г Г°ГҐГ¦Г¤Г  ГўГ±ГЁГ·ГЄГЁ ГЇГ°Г®Г¤ГіГЄГІГЁ Гў listBox6.
         /// </summary>
         private void LoadIngredientsIntoListBox6(RecipeServices formView)
         {
@@ -294,7 +294,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Зарежда всички продукти в listBox8.
+        /// Г‡Г Г°ГҐГ¦Г¤Г  ГўГ±ГЁГ·ГЄГЁ ГЇГ°Г®Г¤ГіГЄГІГЁ Гў listBox8.
         /// </summary>
         private void LoadIngredientsIntoListBox8(RecipeServices formView)
         {
@@ -307,7 +307,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Събитие при натискане на бутон за обновяване на избрана рецепта.
+        /// Г‘ГєГЎГЁГІГЁГҐ ГЇГ°ГЁ Г­Г ГІГЁГ±ГЄГ Г­ГҐ Г­Г  ГЎГіГІГ®Г­ Г§Г  Г®ГЎГ­Г®ГўГїГўГ Г­ГҐ Г­Г  ГЁГ§ГЎГ°Г Г­Г  Г°ГҐГ¶ГҐГЇГІГ .
         /// </summary>
         private void button3_Click(object sender, EventArgs e)
         {
@@ -327,28 +327,28 @@ namespace PumiikaVChiniika
 
                 List<string> updatedIngredients = listBox9.Items.Cast<string>().ToList();
                 List<string> updatedQuantities = richTextBox3.Lines.ToList();
-
+                //РџСЂРѕРІРµСЂРєР° РЅР° СЃСЉРѕС‚РІРµС‚РЅРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІР° Рё СЃСЉСЃС‚Р°РІРєРё
                 if (updatedIngredients.Count != updatedQuantities.Count)
                 {
-                    MessageBox.Show("Броят на продуктите и количествата не съвпадат.");
+                    MessageBox.Show("ГЃГ°Г®ГїГІ Г­Г  ГЇГ°Г®Г¤ГіГЄГІГЁГІГҐ ГЁ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ ГІГ  Г­ГҐ Г±ГєГўГЇГ Г¤Г ГІ.");
                     return;
                 }
-
+                //РџСЂРѕРјСЏРЅР° РЅР° СЂРµС†РµРїС‚Р°С‚Р° СЃ РЅРѕРІРёС‚Рµ РґР°РЅРЅРё
                 formView.UpdateRecipe(selectedRecipeId, updatedName, updatedDescription, updatedTime,
                     updatedDifficulty, updatedInstructions, updatedCategory, updatedIngredients, updatedQuantities);
 
                 UIRefresh(formView);
                 listBox4.SelectedIndex = selectedIndex;
-                MessageBox.Show("Рецептата е обновена успешно!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ГђГҐГ¶ГҐГЇГІГ ГІГ  ГҐ Г®ГЎГ­Г®ГўГҐГ­Г  ГіГ±ГЇГҐГёГ­Г®!", "Г“Г±ГЇГҐГµ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Моля, изберете рецепта за редактиране.");
+                MessageBox.Show("ГЊГ®Г«Гї, ГЁГ§ГЎГҐГ°ГҐГІГҐ Г°ГҐГ¶ГҐГЇГІГ  Г§Г  Г°ГҐГ¤Г ГЄГІГЁГ°Г Г­ГҐ.");
             }
         }
 
         /// <summary>
-        /// Събитие при натискане на бутон за добавяне на нов продукт.
+        /// Г‘ГєГЎГЁГІГЁГҐ ГЇГ°ГЁ Г­Г ГІГЁГ±ГЄГ Г­ГҐ Г­Г  ГЎГіГІГ®Г­ Г§Г  Г¤Г®ГЎГ ГўГїГ­ГҐ Г­Г  Г­Г®Гў ГЇГ°Г®Г¤ГіГЄГІ.
         /// </summary>
         private void button4_Click(object sender, EventArgs e)
         {
@@ -363,13 +363,13 @@ namespace PumiikaVChiniika
             }
             else
             {
-                MessageBox.Show("Не сте въвели име на продукта!");
+                MessageBox.Show("ГЌГҐ Г±ГІГҐ ГўГєГўГҐГ«ГЁ ГЁГ¬ГҐ Г­Г  ГЇГ°Г®Г¤ГіГЄГІГ !");
             }
         }
 
         /// <summary>
-        /// Събитие при избор на продукти в listBox6 (при добавяне на рецепта).
-        /// Избраните продукти се копират в listBox7.
+        /// Г‘ГєГЎГЁГІГЁГҐ ГЇГ°ГЁ ГЁГ§ГЎГ®Г° Г­Г  ГЇГ°Г®Г¤ГіГЄГІГЁ Гў listBox6 (ГЇГ°ГЁ Г¤Г®ГЎГ ГўГїГ­ГҐ Г­Г  Г°ГҐГ¶ГҐГЇГІГ ).
+        /// Г€Г§ГЎГ°Г Г­ГЁГІГҐ ГЇГ°Г®Г¤ГіГЄГІГЁ Г±ГҐ ГЄГ®ГЇГЁГ°Г ГІ Гў listBox7.
         /// </summary>
         private void listBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -382,7 +382,7 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Събитие при натискане на бутон за добавяне на нова рецепта.
+        /// Г‘ГєГЎГЁГІГЁГҐ ГЇГ°ГЁ Г­Г ГІГЁГ±ГЄГ Г­ГҐ Г­Г  ГЎГіГІГ®Г­ Г§Г  Г¤Г®ГЎГ ГўГїГ­ГҐ Г­Г  Г­Г®ГўГ  Г°ГҐГ¶ГҐГЇГІГ .
         /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
@@ -420,8 +420,8 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Събитие при избор на продукти в listBox8 (в раздела за редактиране).
-        /// Избраните продукти се копират в listBox9.
+        /// Г‘ГєГЎГЁГІГЁГҐ ГЇГ°ГЁ ГЁГ§ГЎГ®Г° Г­Г  ГЇГ°Г®Г¤ГіГЄГІГЁ Гў listBox8 (Гў Г°Г Г§Г¤ГҐГ«Г  Г§Г  Г°ГҐГ¤Г ГЄГІГЁГ°Г Г­ГҐ).
+        /// Г€Г§ГЎГ°Г Г­ГЁГІГҐ ГЇГ°Г®Г¤ГіГЄГІГЁ Г±ГҐ ГЄГ®ГЇГЁГ°Г ГІ Гў listBox9.
         /// </summary>
         private void listBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -434,12 +434,12 @@ namespace PumiikaVChiniika
         }
 
         /// <summary>
-        /// Събитие при промяна на избора в listBox9 (в момента не е реализирано).
+        /// Г‘ГєГЎГЁГІГЁГҐ ГЇГ°ГЁ ГЇГ°Г®Г¬ГїГ­Г  Г­Г  ГЁГ§ГЎГ®Г°Г  Гў listBox9 (Гў Г¬Г®Г¬ГҐГ­ГІГ  Г­ГҐ ГҐ Г°ГҐГ Г«ГЁГ§ГЁГ°Г Г­Г®).
         /// </summary>
         private void listBox9_SelectedIndexChanged(object sender, EventArgs e) { }
 
         /// <summary>
-        /// Вътрешен клас, представляващ рецепта с основните й свойства.
+        /// Г‚ГєГІГ°ГҐГёГҐГ­ ГЄГ«Г Г±, ГЇГ°ГҐГ¤Г±ГІГ ГўГ«ГїГўГ Г№ Г°ГҐГ¶ГҐГЇГІГ  Г± Г®Г±Г­Г®ГўГ­ГЁГІГҐ Г© Г±ГўГ®Г©Г±ГІГўГ .
         /// </summary>
         public class Recipe
         {
