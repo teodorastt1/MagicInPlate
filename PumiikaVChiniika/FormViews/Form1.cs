@@ -457,5 +457,10 @@ namespace PumiikaVChiniika
 
         private void richTextBox4_TextChanged(object sender, EventArgs e) { }
         private void richTextBox3_TextChanged(object sender, EventArgs e) { }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

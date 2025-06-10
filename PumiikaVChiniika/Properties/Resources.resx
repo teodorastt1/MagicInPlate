@@ -124,9 +124,6 @@
   <data name="DobavyaneNaProduct1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DobavyaneNaProduct.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NachalnaStranica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NachalnaStranica.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="feeding-large-groups" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\feeding-large-groups.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,14 +133,20 @@
   <data name="feeding-large-groups2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\feeding-large-groups.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Pasta-1024x683" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pasta-1024x683.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="9760871_resized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9760871_resized.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IndiiciZaProekta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IndiiciZaProekta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mini-homemade-strawberry-shortcake-pastry-beige-background_resized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mini-homemade-strawberry-shortcake-pastry-beige-background_resized.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,16 +166,16 @@
   <data name="pexels-enginakyurt-1435895_compressed_resized" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-enginakyurt-1435895_compressed_resized.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IndiiciZaProekta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IndiiciZaProekta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NachalnaStranica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NachalnaStranica.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pasta-1024x683" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pasta-1024x683.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="feeding-large-groups1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\feeding-large-groups.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\360_F_332753934_tBacXEgxnVplFBRyKbCif49jh0Wz89ns.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="54088694-healthy-food-background-studio-photo-of-different-fruits-and-vegetables-on-white-wooden-table-high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\54088694-healthy-food-background-studio-photo-of-different-fruits-and-vegetables-on-white-wooden-table-high.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

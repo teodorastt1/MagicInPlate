@@ -804,7 +804,7 @@
             // tabPage4
             // 
             tabPage4.BackColor = Color.OldLace;
-            tabPage4.BackgroundImage = Properties.Resources.IndiiciZaProekta;
+            tabPage4.BackgroundImage = Properties.Resources._54088694_healthy_food_background_studio_photo_of_different_fruits_and_vegetables_on_white_wooden_table_high;
             tabPage4.Controls.Add(label12);
             tabPage4.Controls.Add(button2);
             tabPage4.Controls.Add(listBox3);
@@ -821,7 +821,7 @@
             label12.AutoSize = true;
             label12.BackColor = Color.White;
             label12.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            label12.ForeColor = Color.Orange;
+            label12.ForeColor = Color.Firebrick;
             label12.Location = new Point(182, 499);
             label12.Name = "label12";
             label12.Size = new Size(795, 114);
@@ -832,7 +832,7 @@
             // 
             button2.BackColor = Color.White;
             button2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            button2.ForeColor = Color.Orange;
+            button2.ForeColor = Color.Firebrick;
             button2.Location = new Point(1050, 499);
             button2.Name = "button2";
             button2.Size = new Size(134, 114);
@@ -843,21 +843,22 @@
             // 
             // listBox3
             // 
-            listBox3.BackColor = Color.Orange;
+            listBox3.BackColor = Color.Firebrick;
             listBox3.FormattingEnabled = true;
             listBox3.ItemHeight = 35;
-            listBox3.Location = new Point(568, 150);
+            listBox3.Location = new Point(715, 106);
             listBox3.Name = "listBox3";
             listBox3.Size = new Size(409, 319);
             listBox3.TabIndex = 1;
+            listBox3.SelectedIndexChanged += listBox3_SelectedIndexChanged;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.BackColor = Color.Orange;
+            label11.BackColor = Color.Firebrick;
             label11.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label11.ForeColor = Color.White;
-            label11.Location = new Point(271, 150);
+            label11.Location = new Point(421, 106);
             label11.Name = "label11";
             label11.Size = new Size(244, 35);
             label11.TabIndex = 0;

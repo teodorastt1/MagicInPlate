@@ -83,6 +83,17 @@ namespace PumiikaVChiniika.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _54088694_healthy_food_background_studio_photo_of_different_fruits_and_vegetables_on_white_wooden_table_high {
+            get {
+                object obj = ResourceManager.GetObject("54088694-healthy-food-background-studio-photo-of-different-fruits-and-vegetables-" +
+                        "on-white-wooden-table-high", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _6039758_resized__1_ {
             get {
                 object obj = ResourceManager.GetObject("6039758_resized (1)", resourceCulture);
